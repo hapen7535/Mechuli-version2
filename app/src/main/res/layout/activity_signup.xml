@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+
+    <GridLayout
+        android:id="@+id/mainBar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="6"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/returnbtn"
+            android:layout_width="51dp"
+            android:layout_height="48dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/backdesign"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/hancommalangmalangbold"
+            android:gravity="center"
+            android:text="메추리"
+            android:textSize="35sp" />
+
+
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/signSet"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/signStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/signTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:fontFamily="@font/notosanskrbold"
+            android:textSize="30sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:id="@+id/getID"
+                android:fontFamily="@font/notosanskrbold"
+                android:textSize="20sp"/>
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@id/signTitle"
+            android:id="@+id/setID"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signtext"
+            android:textColor="#757575"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dupText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosanskrbold"
+                    android:text="중복되는 아이디입니다."
+                    android:textColor="#FF0000"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/dupChk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/notosanskrbold"
+                    android:text="중복확인" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="패스워드"
+               android:id="@+id/getPW"
+                android:fontFamily="@font/notosanskrbold"
+                android:textSize="20sp"/>
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@id/setID"
+            android:id="@+id/setPW"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/signtext"
+            android:textColor="#757575"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="패스워드 확인"
+                android:id="@+id/getPWCh"
+                android:fontFamily="@font/notosanskrbold"
+                android:textSize="20sp"/>
+
+        <EditText
+            app:layout_constraintTop_toBottomOf="@id/setPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/signtext"
+            android:textColor="#757575"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="다음"
+            android:background="#59FFCC3A"
+            android:fontFamily="@font/notosanskrbold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

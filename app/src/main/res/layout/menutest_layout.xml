@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/menuground"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tteok_resize"
+        android:id="@+id/menuImg"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/menuName"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/notosanskrmedium"
+        android:text="떡볶이"
+        android:textSize="17sp" />
+
+        <RatingBar
+            android:layout_marginBottom="5dp"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:id="@+id/ratingBar"
+            android:theme="@style/RatingBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         title = "메추리"
 
         startBtn.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            val intent = Intent(this, StartActivity::class.java)
             startActivity(intent)
         }
 

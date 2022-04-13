@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@drawable/roundsquare"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tagAll"
+        android:layout_width="62dp"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/notosanskrmedium"
+        android:gravity="center"
+        android:text="전체" />
+
+</LinearLayout>
