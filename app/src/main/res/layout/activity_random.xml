@@ -70,6 +70,95 @@
         android:orientation="horizontal"
         android:id="@+id/tagSpace">
 
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/addTag">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/selector"
+                        android:layout_height="wrap_content"
+                        android:text="전체"
+                        android:textColor="#5E5E5E"
+                        android:paddingLeft="25dp"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:layout_margin="5dp"
+                        android:paddingRight="25dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:id="@+id/tagAll" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/selector"
+                        android:layout_height="wrap_content"
+                        android:text="한식"
+                        android:layout_margin="5dp"
+                        android:textColor="#5E5E5E"
+                        android:paddingLeft="25dp"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:paddingRight="25dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:id="@+id/tagKor" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/selector"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="분식"
+                        android:textColor="#5E5E5E"
+                        android:paddingLeft="25dp"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:paddingRight="25dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:id="@+id/tagSna" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/selector"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="양식"
+                        android:textColor="#5E5E5E"
+                        android:paddingLeft="25dp"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:paddingRight="25dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:id="@+id/tagWes" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:background="@drawable/selector"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:text="중식"
+                        android:textColor="#5E5E5E"
+                        android:paddingLeft="25dp"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:paddingRight="25dp"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:id="@+id/tagChi" />
+
+
+                </RadioGroup>
+
+
+        </HorizontalScrollView>
+
     </LinearLayout>
 
     <LinearLayout

@@ -22,8 +22,7 @@
         android:gravity="center"
         android:id="@+id/menuName"
         android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_height="38dp"
         android:fontFamily="@font/notosanskrmedium"
         android:text="떡볶이"
         android:textSize="17sp" />
@@ -36,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:numStars="5"
-            android:rating="1"
+            android:rating="0"
             android:stepSize="1" />
 
     </LinearLayout>
