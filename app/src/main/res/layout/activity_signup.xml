@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".SignupActivity">
 
     <GridLayout
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/mainBar"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -48,16 +48,17 @@
     </GridLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signSet"
+        app:layout_constraintTop_toBottomOf="@id/mainBar"
+        app:layout_constraintBottom_toTopOf="@id/signStart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/signSet"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/signStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -77,14 +78,15 @@
                 android:fontFamily="@font/notosanskrbold"
                 android:textSize="20sp"/>
 
-        <EditText
-            app:layout_constraintTop_toBottomOf="@id/signTitle"
-            android:id="@+id/setID"
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/signtext"
-            android:textColor="#757575"/>
+            <EditText
+                android:id="@+id/setID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/signtext"
+                android:textColor="#757575"
+                app:layout_constraintTop_toBottomOf="@id/signTitle"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
             <LinearLayout
@@ -99,6 +101,16 @@
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/notosanskrbold"
                     android:text="중복되는 아이디입니다."
+                    android:textColor="#FF0000"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/noneDup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosanskrbold"
+                    android:text="사용하실 수 있는 아이디입니다."
                     android:textColor="#FF0000"
                     android:visibility="gone" />
 
@@ -126,14 +138,15 @@
                 android:fontFamily="@font/notosanskrbold"
                 android:textSize="20sp"/>
 
-        <EditText
-            app:layout_constraintTop_toBottomOf="@id/setID"
-            android:id="@+id/setPW"
-            android:layout_width="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/signtext"
-            android:textColor="#757575"/>
+            <EditText
+                android:id="@+id/setPW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/signtext"
+                android:textColor="#757575"
+                app:layout_constraintTop_toBottomOf="@id/setID"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,27 +156,29 @@
                 android:fontFamily="@font/notosanskrbold"
                 android:textSize="20sp"/>
 
-        <EditText
-            app:layout_constraintTop_toBottomOf="@id/setPW"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/signtext"
-            android:textColor="#757575"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/signtext"
+                android:textColor="#757575"
+                app:layout_constraintTop_toBottomOf="@id/setPW"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/signStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="다음"
-            android:background="#59FFCC3A"
-            android:fontFamily="@font/notosanskrbold"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/signStart"
+        android:onClick="whatever"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#59FFCC3A"
+        android:fontFamily="@font/notosanskrbold"
+        android:text="다음"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

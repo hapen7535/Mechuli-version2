@@ -2,25 +2,22 @@ package com.example.version2mechuli
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.version2mechuli.databinding.ActivityGetrecomBinding
 import com.example.version2mechuli.databinding.ActivityLoginBinding
-import com.example.version2mechuli.databinding.ActivitySigndataBinding
 
-class SigndataActivity : AppCompatActivity() {
+class GetrecomActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivitySigndataBinding
+    lateinit var binding : ActivityGetrecomBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signdata)
+        setContentView(R.layout.activity_getrecom)
 
-        binding = ActivitySigndataBinding.inflate(layoutInflater)
+        binding = ActivityGetrecomBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.returnbtn.setOnClickListener{
-
             onBackPressed()
-
         }
 
     }

@@ -1,5 +1,6 @@
 package com.example.version2mechuli
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.version2mechuli.databinding.ActivityCustomerBinding
@@ -16,17 +17,15 @@ class CustomerActivity : AppCompatActivity() {
 
         binding.addCheck.setOnClickListener{
 
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.frm, AddassessFragment())
-                .commitNowAllowingStateLoss()
+            val intent = Intent(this, AddassessActivity::class.java)
+            startActivity(intent)
 
         }
 
         binding.getRecom.setOnClickListener{
 
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.frm, GetrecommendFragment())
-                .commitNowAllowingStateLoss()
+            val intent = Intent(this, GetrecomActivity::class.java)
+            startActivity(intent)
 
         }
 

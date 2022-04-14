@@ -1,10 +1,13 @@
 package com.example.version2mechuli
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.version2mechuli.databinding.ActivityLoginBinding
 import com.example.version2mechuli.databinding.ActivitySignupBinding
-import com.example.version2mechuli.databinding.ActivityStartBinding
 
 class SignupActivity : AppCompatActivity() {
 
@@ -12,14 +15,17 @@ class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
 
         binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        binding.signStart.setOnClickListener{
+        binding.dupChk.setOnClickListener{
 
-            val intent = Intent(this, SigndataActivity::class.java)
-            startActivity(intent)
+            //중복되는 아이디라면
+           // binding.dupText.visibility = View.VISIBLE
+
+            //중복되지 않는 아이디라면
+          //  binding.noneDup.visibility = View.VISIBLE
 
         }
 
@@ -28,4 +34,14 @@ class SignupActivity : AppCompatActivity() {
         }
 
     }
+
+
+    fun whatever(view: View) {
+
+        //Log.d("click","눌림")
+        val intent = Intent(this, SigndataActivity::class.java)
+        startActivity(intent)
+
+    }
+
 }
