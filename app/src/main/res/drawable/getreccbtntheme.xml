@@ -1,0 +1,5 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/getrecbtn"
+        android:width="323dp"
+        android:height="132dp" />
+</layer-list>

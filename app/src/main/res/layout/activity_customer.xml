@@ -61,59 +61,104 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/blank">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp">
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/addCheck"
-        android:text="아이디"
-        android:id="@+id/userID"
-        android:fontFamily="@font/notosanskrbold"
-        android:textSize="23sp"/>
+            <TextView
+                android:id="@+id/userID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrbold"
+                android:text="아이디"
+                android:textSize="23sp"
+                app:layout_constraintStart_toStartOf="@id/addCheck"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/userID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="님, 안녕하세요"
-        android:fontFamily="@font/notosanskrbold"
-        android:textSize="23sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrbold"
+                android:text="님, 안녕하세요"
+                android:textSize="23sp"
+                app:layout_constraintStart_toEndOf="@id/userID"
+                app:layout_constraintTop_toTopOf="parent" />
 
-     <Button
-         android:id="@+id/addCheck"
-         app:layout_constraintTop_toBottomOf="@id/userID"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:background="@drawable/addcheck"
-         android:text="\n\n평가이력\n 추가하기"
-         android:fontFamily="@font/notosanskrbold"
-         android:textSize="25sp"/>
+            <Button
+                android:id="@+id/addCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/addbtntheme"
+                android:fontFamily="@font/notosanskrbold"
+                android:stateListAnimator="@null"
+                android:text="\n평점 추가"
+                android:textColor="#636363"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userID" />
 
-        <Button
-            android:id="@+id/getRecom"
-            app:layout_constraintTop_toBottomOf="@id/addCheck"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/recommend"
-            android:text="\n\n메뉴\n 추천받기"
-            android:fontFamily="@font/notosanskrbold"
-            android:textSize="25sp"/>
+            <Button
+                android:id="@+id/addSubBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/addsubtheme"
+                android:fontFamily="@font/notosanskrbold"
+                android:stateListAnimator="@null"
+                android:text="평점 이력을 추가하여\n추천 정확도를 높여보세요!"
+                android:textColor="#636363"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/line1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addCheck" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/line1"
+                android:layout_width="276dp"
+                android:layout_height="2dp"
+                android:background="#338A8A8A"
+                android:padding="8dp"
+                app:layout_constraintBottom_toTopOf="@id/getRecom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addSubBtn" />
+
+            <Button
+                android:id="@+id/getRecom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/getreccbtntheme"
+                android:fontFamily="@font/notosanskrbold"
+                android:stateListAnimator="@null"
+                android:text="\n추천받기"
+                android:textColor="#636363"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1" />
+
+            <Button
+                android:id="@+id/getRecomSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/addsubtheme"
+                android:fontFamily="@font/notosanskrbold"
+                android:stateListAnimator="@null"
+                android:text="현재 평점 이력으로 \n 메뉴를 바로 추천받을 수 있어요!"
+                android:textColor="#636363"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/getRecom" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
