@@ -3,6 +3,8 @@ package com.example.version2mechuli
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import com.example.version2mechuli.databinding.ActivityLoginBinding
 import com.example.version2mechuli.databinding.ActivityStartBinding
 
@@ -29,6 +31,12 @@ class LoginActivity : AppCompatActivity() {
         binding.returnbtn.setOnClickListener{
             onBackPressed()
         }
+
+        //회원가입 텍스트에 밑줄
+        val content = SpannableString(binding.signUp.text.toString())
+        content.setSpan(UnderlineSpan(), 0, content.length, 0)
+        binding.signUp.text = content
+
 
     }
 }
