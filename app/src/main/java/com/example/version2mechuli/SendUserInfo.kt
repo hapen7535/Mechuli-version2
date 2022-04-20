@@ -13,6 +13,7 @@ interface SendUserInfo {
     fun requestData(
         @Field("id") id : String,
         @Field("pw") pw : String,
+        @Field("score") score : Int,
     ):Call<GetData> //받아올 데이터 형식
 
 }

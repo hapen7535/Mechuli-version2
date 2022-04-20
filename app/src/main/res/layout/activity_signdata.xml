@@ -66,14 +66,15 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="500dp">
+            android:layout_height="500dp"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout
+                android:id="@+id/addMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:id="@+id/addMenu">
+                android:orientation="vertical">
 
 
             </LinearLayout>
