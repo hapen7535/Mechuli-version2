@@ -9,7 +9,6 @@ data class GetData(
 data class getdata(
 
     var userId : String,
-    var foodName : String,
-    var score : Float,
+    var password : String,
 
 )
