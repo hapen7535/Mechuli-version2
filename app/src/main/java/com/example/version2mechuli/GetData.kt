@@ -10,5 +10,6 @@ data class getdata(
 
     var userId : String,
     var password : String,
+    var isdupl : Boolean,
 
 )

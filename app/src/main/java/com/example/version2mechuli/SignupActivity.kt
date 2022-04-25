@@ -20,13 +20,15 @@ class SignupActivity : AppCompatActivity() {
     lateinit var binding : ActivitySignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
+        binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var userId = binding.setID.text.toString()
         var userPw = binding.setPW.text.toString()
 
-        binding = ActivitySignupBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         binding.dupChk.setOnClickListener{
 
