@@ -3,11 +3,8 @@ package com.example.version2mechuli
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.version2mechuli.databinding.ActivityLoginBinding
 import com.example.version2mechuli.databinding.ActivitySignupBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -28,6 +25,7 @@ class SignupActivity : AppCompatActivity() {
 
         var userId = binding.setID.text.toString()
         var userPw = binding.setPW.text.toString()
+        var duplicatePw = binding.dupPw.text.toString()
 
 
         binding.dupChk.setOnClickListener{
@@ -41,8 +39,12 @@ class SignupActivity : AppCompatActivity() {
         }
 
         binding.signStart.setOnClickListener{
-            sendUserInfo(userId, userPw)
-
+            if(userPw != duplicatePw){
+                Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
+            }
+            else {
+                sendUserInfo(userId, userPw)
+            }
         }
 
         binding.returnbtn.setOnClickListener{
@@ -57,9 +59,10 @@ class SignupActivity : AppCompatActivity() {
         val intent = Intent(this, SigndataActivity::class.java)
 
         var retrofit = Retrofit.Builder() //레트로핏 인스턴스 생성
-            .baseUrl("http://3.39.194.151")
+            .baseUrl("http://10.0.2.2:3333/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
 
         if(id != null && pw != null) {
 
@@ -68,10 +71,12 @@ class SignupActivity : AppCompatActivity() {
             sendUserdata.requestData(id, pw).enqueue(object :
                 Callback<GetData> {
                 override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
-                    Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
+                    Log.d("error", (t.message.toString()))
                 }
                 override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
                     var arr = response.body()
+                    Log.d("id,pw",(arr?.userId + arr?.password))
                 }
             })
         }

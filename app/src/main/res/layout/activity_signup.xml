@@ -163,6 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/signtext"
+                android:id="@+id/dupPw"
                 android:textColor="#757575"
                 app:layout_constraintTop_toBottomOf="@id/setPW"
                 tools:ignore="SpeakableTextPresentCheck" />
