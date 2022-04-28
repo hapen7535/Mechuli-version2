@@ -23,10 +23,13 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var userId = binding.setID.text.toString()
-        var userPw = binding.setPW.text.toString()
-        var duplicatePw = binding.dupPw.text.toString()
+        var userId = binding.setID.text
+        var userPw = binding.setPW.text
+        var duplicatePw = binding.dupPw.text
 
+//        var id = userId.toString()
+//        var pw = userPw.toString()
+//        var dpw = duplicatePw.toString()
 
         binding.dupChk.setOnClickListener{
 
@@ -39,11 +42,19 @@ class SignupActivity : AppCompatActivity() {
         }
 
         binding.signStart.setOnClickListener{
-            if(userPw != duplicatePw){
+
+            var id = userId.toString()
+            var pw = userPw.toString()
+            var dpw = duplicatePw.toString()
+            Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
+
+            if(!pw.equals(dpw)){
                 Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
+                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw + "\n\n")
             }
             else {
-                sendUserInfo(userId, userPw)
+                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw + "\n\n")
+                sendUserInfo(userId.toString(), userPw.toString())
             }
         }
 
@@ -66,17 +77,18 @@ class SignupActivity : AppCompatActivity() {
 
         if(id != null && pw != null) {
 
+            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
             var sendUserdata: SendUserdata = retrofit.create(SendUserdata::class.java) //아이디, 비밀번호 전송
 
             sendUserdata.requestData(id, pw).enqueue(object :
-                Callback<GetData> {
-                override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
+                Callback<GetDataList> {
+                override fun onFailure(call: Call<GetDataList>, t: Throwable) { //통신 실패
                     Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
                     Log.d("error", (t.message.toString()))
                 }
-                override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
+                override fun onResponse(call : Call<GetDataList>, response: Response<GetDataList>){ //통신 성공
                     var arr = response.body()
-                    Log.d("id,pw",(arr?.userId + arr?.password))
+//                    Log.d("id,pw",(arr?.userId + arr?.password))
                 }
             })
         }
