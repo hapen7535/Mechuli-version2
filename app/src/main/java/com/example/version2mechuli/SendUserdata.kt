@@ -13,6 +13,6 @@ interface SendUserdata {
     fun requestData(
         @Field("id") id : String,
         @Field("pw") pw : String,
-    ):Call<GetDataList>
+    ):Call<GetData> // 서버에서 받아올 데이터 형식
 
 }

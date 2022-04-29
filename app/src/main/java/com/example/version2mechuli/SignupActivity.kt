@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.version2mechuli.databinding.ActivitySignupBinding
+import com.google.gson.GsonBuilder
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
@@ -27,10 +28,6 @@ class SignupActivity : AppCompatActivity() {
         var userPw = binding.setPW.text
         var duplicatePw = binding.dupPw.text
 
-//        var id = userId.toString()
-//        var pw = userPw.toString()
-//        var dpw = duplicatePw.toString()
-
         binding.dupChk.setOnClickListener{
 
             //중복되는 아이디라면
@@ -50,10 +47,10 @@ class SignupActivity : AppCompatActivity() {
 
             if(!pw.equals(dpw)){
                 Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
-                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw + "\n\n")
+                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
             }
             else {
-                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw + "\n\n")
+                Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
                 sendUserInfo(userId.toString(), userPw.toString())
             }
         }
@@ -69,25 +66,29 @@ class SignupActivity : AppCompatActivity() {
 
         val intent = Intent(this, SigndataActivity::class.java)
 
+        var gson = GsonBuilder().setLenient().create()
+
         var retrofit = Retrofit.Builder() //레트로핏 인스턴스 생성
             .baseUrl("http://10.0.2.2:3333/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson)) // 파싱등록
             .build()
 
 
         if(id != null && pw != null) {
 
-            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
+//            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
             var sendUserdata: SendUserdata = retrofit.create(SendUserdata::class.java) //아이디, 비밀번호 전송
 
             sendUserdata.requestData(id, pw).enqueue(object :
-                Callback<GetDataList> {
-                override fun onFailure(call: Call<GetDataList>, t: Throwable) { //통신 실패
+                Callback<GetData> {
+                override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
                     Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
-                    Log.d("error", (t.message.toString()))
+                    Log.d("myTag", (t.message.toString()))
+//                    Log.d("error", (t.message.toString()))
                 }
-                override fun onResponse(call : Call<GetDataList>, response: Response<GetDataList>){ //통신 성공
+                override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
                     var arr = response.body()
+                    Log.d("myTag", "res : " + arr.toString())
 //                    Log.d("id,pw",(arr?.userId + arr?.password))
                 }
             })
