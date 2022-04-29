@@ -58,13 +58,13 @@ class SignupActivity : AppCompatActivity() {
         var id = binding.setID.text.toString()
 
         //중복되는 아이디라면
-        if (checkId(id) == true) {
+        if (checkId(id) == false) {
             binding.dupText.visibility = View.VISIBLE
             binding.signStart.isEnabled = false
         }
 
         //중복되지 않는 아이디라면
-        else {
+        if (checkId(id) == true) {
             binding.noneDup.visibility = View.VISIBLE
         }
     }
