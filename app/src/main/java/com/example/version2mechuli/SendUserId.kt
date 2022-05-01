@@ -9,8 +9,6 @@ interface SendUserId {
 
     @FormUrlEncoded
     @POST("/idCheck")
-    fun requestData(
-        @Field("id") id : String,
-    ): Call<GetIdresult> // 서버에서 받아올 데이터 형식
+    suspend fun requestData( @Field("id") id : String ): GetIdresult // 서버에서 받아올 데이터 형식
 
 }
