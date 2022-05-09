@@ -19,7 +19,5 @@ I would recommend you to use Pixel 2 for android emulator.
 |Network|Retrofit2|
 |---|---|---|---|
 |Asynchronous|Coroutine|
-|---|---|---|---|
 |Image Load|Glide|
-|---|---|---|---|
 |JetPack|Lifecycles|  
