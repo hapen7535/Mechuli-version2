@@ -1,7 +1,7 @@
 # 메추리 Mechuli version2.0.0  
 ---
-Food Recommendation Android Application Using Matrix Factorization SGD
-  행렬 분해 SGD 알고리즘을 활용한 음식 추천 어플리케이션입니다.
+Food Recommendation Android Application Using Matrix Factorization SGD  
+행렬 분해 SGD 알고리즘을 활용한 음식 추천 어플리케이션입니다.
   
 ### Getting Started  
 ---
