@@ -1,5 +1,4 @@
 package com.example.version2mechuli
-
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -9,6 +8,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.version2mechuli.InfoClient
+import com.example.version2mechuli.R
+import com.example.version2mechuli.SigndataActivity
 import com.example.version2mechuli.databinding.ActivitySignupBinding
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -18,6 +20,7 @@ import retrofit2.Response
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.Serializable
 
 class SignupActivity : AppCompatActivity() {
 
@@ -51,7 +54,10 @@ class SignupActivity : AppCompatActivity() {
             }
             else {
                 //Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
-                sendUserInfo(userId.toString(), userPw.toString())
+                //sendUserInfo(userId.toString(), userPw.toString())
+                id = userId.toString()
+                pw = userPw.toString()
+                ActivityStart(id, pw)
             }
         }
 
@@ -83,44 +89,49 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun sendUserInfo(id : String, pw : String) {
-
+    private fun ActivityStart(userid : String, userpw : String){
         val intent = Intent(this, SigndataActivity::class.java)
-
-        var gson = GsonBuilder().setLenient().create()
-
-        var retrofit = Retrofit.Builder() //레트로핏 인스턴스 생성
-            .baseUrl("http://10.0.2.2:3333/")
-            .addConverterFactory(GsonConverterFactory.create(gson)) // 파싱등록
-            .build()
-
-
-        if(id != null && pw != null ) {
-
-//            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
-            var sendUserdata: SendUserdata = retrofit.create(SendUserdata::class.java) //아이디, 비밀번호 전송
-
-            sendUserdata.requestData(id, pw).enqueue(object :
-                Callback<GetData> {
-                override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
-                    Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
-                    Log.d("myTag", (t.message.toString()))
-//                    Log.d("error", (t.message.toString()))
-                }
-                override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
-                    var arr = response.body()
-                    Log.d("myTag", "res : " + arr.toString())
-//                    Log.d("id,pw",(arr?.userId + arr?.password))
-                }
-            })
-        }
-
-
-            startActivity(intent)
-        }
-
-
+        intent.putExtra("id", userid)
+        intent.putExtra("pw",userpw)
+        startActivity(intent)
     }
+
+
+//    private fun sendUserInfo(id : String, pw : String) {
+//
+//
+//
+//        var gson = GsonBuilder().setLenient().create()
+//
+//        var retrofit = Retrofit.Builder() //레트로핏 인스턴스 생성
+//            .baseUrl("http://10.0.2.2:3333/")
+//            .addConverterFactory(GsonConverterFactory.create(gson)) // 파싱등록
+//            .build()
+//
+//
+//        if(id != null && pw != null ) {
+//
+////            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
+//            var sendUserdata: SendUserdata = retrofit.create(SendUserdata::class.java) //아이디, 비밀번호 전송
+//
+//            sendUserdata.requestData(id, pw).enqueue(object :
+//                Callback<GetData> {
+//                override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
+//                    Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
+//                    Log.d("myTag", (t.message.toString()))
+////                    Log.d("error", (t.message.toString()))
+//                }
+//                override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
+//                    var arr = response.body()
+//                    Log.d("myTag", "res : " + arr.toString())
+////                    Log.d("id,pw",(arr?.userId + arr?.password))
+//                }
+//            })
+//        }
+//
+//        }
+
+
+}
 
 
