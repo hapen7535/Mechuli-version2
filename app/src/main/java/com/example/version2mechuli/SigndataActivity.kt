@@ -2,6 +2,9 @@ package com.example.version2mechuli
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,10 +22,13 @@ class SigndataActivity : AppCompatActivity() {
     lateinit var userid : String
     lateinit var userpw : String
 
+    var ratingList = mutableMapOf<String, Float>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signdata)
+
 
         val secondIntent = getIntent()
         userid = secondIntent.getStringExtra("id").toString()
@@ -39,7 +45,12 @@ class SigndataActivity : AppCompatActivity() {
         addMenuView(arrMenu)
 
         binding.signTest.setOnClickListener {
-            completeInfo(userid, userpw)
+            if(ratingList.size < 5){
+                Toast.makeText(this, "해당 메뉴의 점수를 모두 매겨주세요.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                completeInfo(userid, userpw, ratingList)
+            }
         }
 
 
@@ -51,23 +62,28 @@ class SigndataActivity : AppCompatActivity() {
 
             val menuView = layoutInflater.inflate(R.layout.menutest_layout, null, false)
             val menuViewText = menuView.findViewById<TextView>(R.id.menuName)
+            val menuRating = menuView.findViewById<RatingBar>(R.id.ratingBar)
+            val rating = menuRating.rating
 
             menuViewText.setText(it)
             binding.addMenu.addView(menuView)
 
-            menuView.setOnClickListener {
-                //tagView.setBackgroundResource(R.drawable.taglayout);
+            menuRating.setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
+                ratingBar.rating
+                ratingList[it] = rating
+                Log.d("ratingList", ratingList.toString())
             }
-        }
 
+        }
     }
 
-    private fun completeInfo(id : String, pw : String){
+    private fun completeInfo(id : String, pw : String, ratings : MutableMap<String, Float>){
+
 
         lifecycleScope.launch{
             //UI
             val res = withContext(Dispatchers.IO){
-                InfoClientData.service.requestData(id,pw)
+                InfoClientData.service.requestData(id,pw,ratings)
             }
             //UI
             val answer = res.result
@@ -80,5 +96,6 @@ class SigndataActivity : AppCompatActivity() {
             }
         }
     }
+
 
 }

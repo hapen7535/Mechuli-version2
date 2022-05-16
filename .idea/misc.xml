@@ -38,9 +38,12 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_random.xml" value="0.16134751773049646" />
-        <entry key="app/src/main/res/layout/activity_signdata.xml" value="0.12184391736801836" />
+        <entry key="app/src/main/res/layout/activity_signdata.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.16134751773049646" />
         <entry key="app/src/main/res/layout/fragment_addassess.xml" value="0.16134751773049646" />
+        <entry key="app/src/main/res/layout/menu_layout.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/menutest_layout.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/tags.xml" value="0.33177083333333335" />
       </map>
     </option>
   </component>
