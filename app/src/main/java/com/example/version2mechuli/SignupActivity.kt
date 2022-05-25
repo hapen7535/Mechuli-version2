@@ -50,10 +50,10 @@ class SignupActivity : AppCompatActivity() {
 
             if(!pw.equals(dpw)){
                 Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
-                //Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
+                Log.d("myTag", "비밀번호 불일치")
             }
             else {
-                //Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
+                Log.d("myTag", "평가이력 체크로 이동")
                 //sendUserInfo(userId.toString(), userPw.toString())
                 id = userId.toString()
                 pw = userPw.toString()
@@ -79,10 +79,12 @@ class SignupActivity : AppCompatActivity() {
             //UI
             val chkAns = result.isRedup
             if(chkAns){
+                Log.d("myTag", "사용 가능, id : " + id)
                 binding.dupText.text = "사용하실 수 있는 아이디입니다."
                 binding.signStart.isEnabled = true
             }
             else{
+                Log.d("myTag", "사용 불가, id : " + id)
                 binding.dupText.text = "이미 해당 아이디가 사용중입니다."
                 binding.signStart.isEnabled = false
             }
