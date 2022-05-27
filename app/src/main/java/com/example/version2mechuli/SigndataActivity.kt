@@ -87,11 +87,9 @@ class SigndataActivity : AppCompatActivity() {
             val answer = res.result
             if(answer){
                 val intent = Intent(this@SigndataActivity, LoginActivity::class.java)
-                Log.d("myTag", "회원가입 완료")
                 Toast.makeText(this@SigndataActivity, "회원가입 처리가 정상적으로 완료되었습니다.", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             } else{
-                Log.d("myTag", "회원가입 실패")
                 Toast.makeText(this@SigndataActivity, "회원가입 처리가 비정상적으로 처리되었습니다.", Toast.LENGTH_LONG).show()
             }
         }
