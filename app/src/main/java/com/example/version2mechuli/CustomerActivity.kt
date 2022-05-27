@@ -13,8 +13,10 @@ class CustomerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val secondIntent = getIntent()
-        userid = secondIntent.getStringExtra("id").toString()
+//        val secondIntent = getIntent()
+//        userid = secondIntent.getStringExtra("id").toString()
+        val spf = getSharedPreferences("userInfo", MODE_PRIVATE)
+        userid = spf.getString("userId", "")!!
 
         binding = ActivityCustomerBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -27,7 +27,9 @@ class AddassessActivity : AppCompatActivity() {
 //        binding = ActivityAddassessBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_addassess)
-        getMenuList()
+        val spf = getSharedPreferences("userInfo", MODE_PRIVATE)
+        val userid = spf.getString("userId", "")!!
+        getMenuList(userid)
 
         binding.assess = Description("메뉴를 선택하여 해당 메뉴의 평점을 수정하거나 추가해주세요.")
 

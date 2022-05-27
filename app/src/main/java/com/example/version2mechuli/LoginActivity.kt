@@ -59,7 +59,10 @@ class LoginActivity : AppCompatActivity() {
             if(answer){
                 val intent = Intent(this@LoginActivity, CustomerActivity::class.java)
                 Toast.makeText(this@LoginActivity, "로그인이 완료되었습니다.", Toast.LENGTH_LONG).show()
-                intent.putExtra("id", userid)
+//                intent.putExtra("id", userid)
+                val editor = getSharedPreferences("userInfo",MODE_PRIVATE).edit()
+                editor.putString("userId", userid)
+                editor.apply()
                 startActivity(intent)
             } else{
                 Toast.makeText(this@LoginActivity, "아이디 혹은 비밀번호가 잘못되었습니다.", Toast.LENGTH_LONG).show()
