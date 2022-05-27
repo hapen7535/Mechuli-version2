@@ -8,12 +8,18 @@ import com.example.version2mechuli.databinding.ActivityCustomerBinding
 class CustomerActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityCustomerBinding
+    lateinit var userid : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val secondIntent = getIntent()
+        userid = secondIntent.getStringExtra("id").toString()
+
         binding = ActivityCustomerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        GetId(userid)
 
         binding.addCheck.setOnClickListener{
 
@@ -34,4 +40,9 @@ class CustomerActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun GetId(id : String){
+        binding.userID.setText(id)
+    }
+
 }

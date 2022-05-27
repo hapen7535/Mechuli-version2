@@ -50,10 +50,10 @@ class SignupActivity : AppCompatActivity() {
 
             if(!pw.equals(dpw)){
                 Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
-                Log.d("myTag", "비밀번호 불일치")
+//                Log.d("myTag", "비밀번호 불일치")
             }
             else {
-                Log.d("myTag", "평가이력 체크로 이동")
+//                Log.d("myTag", "평가이력 체크로 이동")
                 //sendUserInfo(userId.toString(), userPw.toString())
                 id = userId.toString()
                 pw = userPw.toString()
@@ -79,12 +79,12 @@ class SignupActivity : AppCompatActivity() {
             //UI
             val chkAns = result.isRedup
             if(chkAns){
-                Log.d("myTag", "사용 가능, id : " + id)
+//                Log.d("myTag", "사용 가능, id : " + id)
                 binding.dupText.text = "사용하실 수 있는 아이디입니다."
                 binding.signStart.isEnabled = true
             }
             else{
-                Log.d("myTag", "사용 불가, id : " + id)
+//                Log.d("myTag", "사용 불가, id : " + id)
                 binding.dupText.text = "이미 해당 아이디가 사용중입니다."
                 binding.signStart.isEnabled = false
             }
@@ -97,41 +97,6 @@ class SignupActivity : AppCompatActivity() {
         intent.putExtra("pw",userpw)
         startActivity(intent)
     }
-
-
-//    private fun sendUserInfo(id : String, pw : String) {
-//
-//
-//
-//        var gson = GsonBuilder().setLenient().create()
-//
-//        var retrofit = Retrofit.Builder() //레트로핏 인스턴스 생성
-//            .baseUrl("http://10.0.2.2:3333/")
-//            .addConverterFactory(GsonConverterFactory.create(gson)) // 파싱등록
-//            .build()
-//
-//
-//        if(id != null && pw != null ) {
-//
-////            Toast.makeText(applicationContext, "id : " + id + ", pw : " + pw, Toast.LENGTH_LONG).show()
-//            var sendUserdata: SendUserdata = retrofit.create(SendUserdata::class.java) //아이디, 비밀번호 전송
-//
-//            sendUserdata.requestData(id, pw).enqueue(object :
-//                Callback<GetData> {
-//                override fun onFailure(call: Call<GetData>, t: Throwable) { //통신 실패
-//                    Toast.makeText(applicationContext, "통신 실패 : " + t.message, Toast.LENGTH_LONG).show()
-//                    Log.d("myTag", (t.message.toString()))
-////                    Log.d("error", (t.message.toString()))
-//                }
-//                override fun onResponse(call : Call<GetData>, response: Response<GetData>){ //통신 성공
-//                    var arr = response.body()
-//                    Log.d("myTag", "res : " + arr.toString())
-////                    Log.d("id,pw",(arr?.userId + arr?.password))
-//                }
-//            })
-//        }
-//
-//        }
 
 
 }

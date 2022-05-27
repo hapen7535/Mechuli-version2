@@ -16,22 +16,21 @@ import kotlinx.coroutines.withContext
 class LoginActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityLoginBinding
-    lateinit var userid : String
-    lateinit var userpw : String
+    lateinit var SendId : String
+    lateinit var SendPw : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        userid = binding.loginID.text.toString()
-        userpw = binding.loginPW.text.toString()
+        SendId = binding.loginID.text.toString()
+        SendPw = binding.loginPW.text.toString()
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.loginBtn.setOnClickListener{
-            val intent = Intent(this, CustomerActivity::class.java)
-            sendLoginData(userid, userpw)
-            startActivity(intent)
+            sendLoginData(SendId, SendPw)
+            ActivityStart(SendId)
         }
 
         binding.signUp.setOnClickListener{
@@ -51,11 +50,11 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun sendLoginData(id : String, pw : String){
+    private fun sendLoginData(userid : String, userpw : String){
 
         lifecycleScope.launch{
             val res = withContext(Dispatchers.IO){
-                InfoClientLogin.service.requestData(id,pw)
+                InfoClientLogin.service.requestData(userid,userpw)
             }
             val answer = res.isUser
             if(answer){
@@ -67,6 +66,12 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun ActivityStart(userid : String){
+        val intent = Intent(this, CustomerActivity::class.java)
+        intent.putExtra("id", userid)
+        startActivity(intent)
     }
 
 }
