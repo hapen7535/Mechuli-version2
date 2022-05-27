@@ -32,7 +32,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/loginspace.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.1805" />
-        <entry key="app/src/main/res/layout/activity_addassess.xml" value="0.16134751773049646" />
+        <entry key="app/src/main/res/layout/activity_addassess.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_customer.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_getrecom.xml" value="0.18478260869565216" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33177083333333335" />

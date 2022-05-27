@@ -33,7 +33,7 @@ class SigndataActivity : AppCompatActivity() {
         val secondIntent = getIntent()
         userid = secondIntent.getStringExtra("id").toString()
         userpw = secondIntent.getStringExtra("pw").toString()
-        arrMenu = arrayListOf("떡볶이","파스타","비빔밥","라멘","아이스크림")
+        arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
         binding = ActivitySigndataBinding.inflate(layoutInflater)
         setContentView(binding.root)

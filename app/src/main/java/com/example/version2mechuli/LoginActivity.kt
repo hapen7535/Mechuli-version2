@@ -22,15 +22,14 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        SendId = binding.loginID.text.toString()
-        SendPw = binding.loginPW.text.toString()
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        SendId = binding.loginID.text.toString()
+        SendPw = binding.loginPW.text.toString()
+
         binding.loginBtn.setOnClickListener{
             sendLoginData(SendId, SendPw)
-            ActivityStart(SendId)
         }
 
         binding.signUp.setOnClickListener{
@@ -60,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
             if(answer){
                 val intent = Intent(this@LoginActivity, CustomerActivity::class.java)
                 Toast.makeText(this@LoginActivity, "로그인이 완료되었습니다.", Toast.LENGTH_LONG).show()
+                intent.putExtra("id", userid)
                 startActivity(intent)
             } else{
                 Toast.makeText(this@LoginActivity, "아이디 혹은 비밀번호가 잘못되었습니다.", Toast.LENGTH_LONG).show()
@@ -68,10 +68,10 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun ActivityStart(userid : String){
-        val intent = Intent(this, CustomerActivity::class.java)
-        intent.putExtra("id", userid)
-        startActivity(intent)
-    }
+//    private fun ActivityStart(userid : String){
+//        val intent = Intent(this, CustomerActivity::class.java)
+//        intent.putExtra("id", userid)
+//        startActivity(intent)
+//    }
 
 }
