@@ -90,7 +90,7 @@
                 android:layout_marginBottom="21dp"
                 android:src="@drawable/searchmark"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:paddingBottom="10dp"
+                android:paddingBottom="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/searchMenu"
                 app:layout_constraintTop_toTopOf="@+id/searchMenu" />
 
@@ -102,6 +102,7 @@
                 android:completionThreshold="1"
                 android:gravity="center"
                 android:hint="메뉴 찾기"
+                android:fontFamily="@font/notosanskrmedium"
                 android:textColorHint="#405F5F5F"
                 app:layout_constraintBottom_toBottomOf="@+id/searchMark"
                 app:layout_constraintStart_toEndOf="@+id/searchMark" />
