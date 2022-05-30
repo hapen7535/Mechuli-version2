@@ -64,8 +64,6 @@ class SignupActivity : AppCompatActivity() {
         binding.returnbtn.setOnClickListener{
             onBackPressed()
         }
-
-
     }
 
     fun checkId(view: View){
@@ -79,12 +77,12 @@ class SignupActivity : AppCompatActivity() {
             //UI
             val chkAns = result.isRedup
             if(chkAns){
-//                Log.d("myTag", "사용 가능, id : " + id)
+                Log.d("myTag", "사용 가능, id : " + id)
                 binding.dupText.text = "사용하실 수 있는 아이디입니다."
                 binding.signStart.isEnabled = true
             }
             else{
-//                Log.d("myTag", "사용 불가, id : " + id)
+                Log.d("myTag", "사용 불가, id : " + id)
                 binding.dupText.text = "이미 해당 아이디가 사용중입니다."
                 binding.signStart.isEnabled = false
             }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.version2mechuli.databinding.ActivityLoginBinding
@@ -16,8 +17,6 @@ import kotlinx.coroutines.withContext
 class LoginActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityLoginBinding
-    lateinit var SendId : String
-    lateinit var SendPw : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +24,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        SendId = binding.loginID.text.toString()
-        SendPw = binding.loginPW.text.toString()
-
         binding.loginBtn.setOnClickListener{
+            var SendId = binding.loginID.text.toString()
+            var SendPw = binding.loginPW.text.toString()
             sendLoginData(SendId, SendPw)
         }
 
@@ -46,10 +44,10 @@ class LoginActivity : AppCompatActivity() {
         content.setSpan(UnderlineSpan(), 0, content.length, 0)
         binding.signUp.text = content
 
-
     }
 
     private fun sendLoginData(userid : String, userpw : String){
+        Log.d("myTag", "id : " + userid + ", pw : " + userpw)
 
         lifecycleScope.launch{
             val res = withContext(Dispatchers.IO){

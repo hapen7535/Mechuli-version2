@@ -16,11 +16,7 @@ class GetrecommendFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentGetrecommendBinding.inflate(inflater, container, false)
-
-
-
         return binding.root
     }
 

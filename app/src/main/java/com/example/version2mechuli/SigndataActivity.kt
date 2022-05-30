@@ -55,6 +55,9 @@ class SigndataActivity : AppCompatActivity() {
     }
 
     private fun addMenuView(arr : ArrayList<String>){
+        Log.d("myTag", "이미지 src 요청")
+        getMenuImg(arr)
+        Log.d("myTag", "이미지 src 받아옴")
 
         arr.forEach{
 
@@ -71,13 +74,26 @@ class SigndataActivity : AppCompatActivity() {
                 ratingList[it] = rating
                 Log.d("ratingList", ratingList.toString())
             }
+        }
+    }
 
+    private fun getMenuImg(nameList : ArrayList<String>){
+        lifecycleScope.launch{
+            Log.d("myTag", "서버 요청 실행")
+            //UI
+            val res = withContext(Dispatchers.IO){
+                InfoClientMenuImg.service.requestData(nameList)
+            }
+            //UI
+            Log.d("myTag", "서버 데이터 받음" + res.resultList)
+
+//            val result = res
+//            Log.d("myTag", "결과 : " + result)
+//            Log.d("myTag", "결과2 : " + result)
         }
     }
 
     private fun completeInfo(id : String, pw : String, ratings : MutableMap<String, Float>){
-
-
         lifecycleScope.launch{
             //UI
             val res = withContext(Dispatchers.IO){
