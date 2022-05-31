@@ -1,11 +1,17 @@
 package com.example.version2mechuli
 
-data class GetImgSrc (
-    val resultList :  List<GetImg>
-)
+import com.google.gson.JsonArray
+import com.google.gson.annotations.SerializedName
+import java.util.*
 
-data class GetImg(
-    val foodname : String,
-    val image_1 : String,
-    val image_2: String,
+data class GetImgSrc (
+//    val resultList :  List<GetImg>
+    @SerializedName("foodname")
+    val foodName : String,
+
+    @SerializedName("image_1")
+    val image1 : String,
+
+    @SerializedName("image_2")
+    val image2: String,
 )

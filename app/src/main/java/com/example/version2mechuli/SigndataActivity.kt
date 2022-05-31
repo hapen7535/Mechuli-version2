@@ -3,16 +3,19 @@ package com.example.version2mechuli
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.example.version2mechuli.databinding.ActivitySigndataBinding
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class SigndataActivity : AppCompatActivity() {
 
@@ -20,6 +23,7 @@ class SigndataActivity : AppCompatActivity() {
     lateinit var arrMenu : ArrayList<String>
     lateinit var userid : String
     lateinit var userpw : String
+    lateinit var imgList : ArrayList<String>
 
     var ratingList = mutableMapOf<String, Float>()
 
@@ -59,6 +63,7 @@ class SigndataActivity : AppCompatActivity() {
 
     private fun addMenuView(arr : ArrayList<String>){
 
+
         arr.forEach{
 
             val menuView = layoutInflater.inflate(R.layout.menutest_layout, null, false)
@@ -78,19 +83,20 @@ class SigndataActivity : AppCompatActivity() {
     }
 
     private fun getMenuImg(nameList : ArrayList<String>){
-        lifecycleScope.launch{
-            Log.d("myTag", "서버 요청 실행")
-            //UI
-            val res = withContext(Dispatchers.IO){
-                InfoClientMenuImg.service.requestData(nameList)
-            }
-            //UI
-            Log.d("myTag", "서버 데이터 받음" + res.resultList.get(1))
 
-//            val result = res
-//            Log.d("myTag", "결과 : " + result)
-//            Log.d("myTag", "결과2 : " + result)
-        }
+        val imgList  = arrayListOf<String>()
+
+            lifecycleScope.launch {
+                Log.d("myTag", "서버 요청 실행")
+                //UI
+                val res = withContext(Dispatchers.IO) {
+                    InfoClientMenuImg.service.requestData(nameList)
+                }
+                //UI
+                Log.d("myTag", "서버 데이터 받음" + res.get(0).foodName)
+
+            }
+
     }
 
     private fun completeInfo(id : String, pw : String, ratings : MutableMap<String, Float>){

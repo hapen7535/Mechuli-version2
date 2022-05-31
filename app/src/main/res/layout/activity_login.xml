@@ -93,6 +93,7 @@
                 android:background="@drawable/loginspace"
                 android:fontFamily="@font/notosanskrbold"
                 android:hint="    패스워드 입력"
+                android:inputType="textPassword"
                 android:textSize="19sp"
                 app:layout_constraintTop_toBottomOf="@id/loginID" />
 
