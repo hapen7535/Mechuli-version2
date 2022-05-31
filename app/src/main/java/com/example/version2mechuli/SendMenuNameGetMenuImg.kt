@@ -9,6 +9,6 @@ interface SendMenuNameGetMenuImg {
 
     @FormUrlEncoded
     @POST("/getMenuImg")
-    suspend fun requestData( @Field("nameList") nameList : ArrayList<String> ): GetImgSrc // 서버에서 받아올 데이터 형식
+    suspend fun requestData( @Field("nameList") nameList : ArrayList<String> ): GetImgSrc
 
 }

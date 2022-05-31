@@ -3,17 +3,16 @@ package com.example.version2mechuli
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.version2mechuli.databinding.ActivitySigndataBinding
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.Serializable
 
 class SigndataActivity : AppCompatActivity() {
 
@@ -35,6 +34,10 @@ class SigndataActivity : AppCompatActivity() {
         userpw = secondIntent.getStringExtra("pw").toString()
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
+        Log.d("myTag", "이미지 src 요청")
+        getMenuImg(arrMenu)
+        Log.d("myTag", "이미지 src 받아옴")
+
         binding = ActivitySigndataBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -55,9 +58,6 @@ class SigndataActivity : AppCompatActivity() {
     }
 
     private fun addMenuView(arr : ArrayList<String>){
-        Log.d("myTag", "이미지 src 요청")
-        getMenuImg(arr)
-        Log.d("myTag", "이미지 src 받아옴")
 
         arr.forEach{
 
@@ -85,7 +85,7 @@ class SigndataActivity : AppCompatActivity() {
                 InfoClientMenuImg.service.requestData(nameList)
             }
             //UI
-            Log.d("myTag", "서버 데이터 받음" + res.resultList)
+            Log.d("myTag", "서버 데이터 받음" + res.resultList.get(1))
 
 //            val result = res
 //            Log.d("myTag", "결과 : " + result)
