@@ -1,5 +1,6 @@
 package com.example.version2mechuli
 
+import android.text.Editable
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -9,6 +10,7 @@ interface MenuApi {
     @POST("/getMenuList")
     suspend fun getData(
         @Field("id") id : String,
+        @Field("keyword") keyword : Editable,
     ): GetMenuList
 
 }

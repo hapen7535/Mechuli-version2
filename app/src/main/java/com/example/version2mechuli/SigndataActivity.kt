@@ -90,12 +90,14 @@ class SigndataActivity : AppCompatActivity() {
                     InfoClientMenuImg.service.requestData(nameList)
                 }
                 //UI
-//                Log.d("myTag", "서버 데이터 받음 : " + res)
-                Log.d("myTag", "0 : " + res.get(0))
-                Log.d("myTag", "1 : " + res.get(1))
-                Log.d("myTag", "2 : " + res.get(2))
-                Log.d("myTag", "3 : " + res.get(3))
-                Log.d("myTag", "4 : " + res.get(4))
+                Log.d("myTag", "서버 데이터 받음 : " + res)
+                Log.d("myTag", "0 : " + res.resultList[0])
+                Log.d("myTag", "1 : " + res.resultList[1])
+//                Log.d("myTag", "0 : " + res.get(0))
+//                Log.d("myTag", "1 : " + res.get(1))
+//                Log.d("myTag", "2 : " + res.get(2))
+//                Log.d("myTag", "3 : " + res.get(3))
+//                Log.d("myTag", "4 : " + res.get(4))
 //                Log.d("myTag", res.get(0).resultList.toString())
 //                Log.d("myTag", "서버 데이터 받음" + res.get(0).foodName)
 

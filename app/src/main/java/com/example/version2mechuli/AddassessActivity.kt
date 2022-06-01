@@ -1,10 +1,9 @@
 package com.example.version2mechuli
 
-import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
@@ -29,7 +28,8 @@ class AddassessActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_addassess)
         val spf = getSharedPreferences("userInfo", MODE_PRIVATE)
         val userid = spf.getString("userId", "")!!
-        getMenuList(userid)
+        val inputWord = binding.searchMenu.text
+        getMenuList(userid, inputWord)
 
         binding.assess = Description("메뉴를 선택하여 해당 메뉴의 평점을 수정하거나 추가해주세요.")
 
@@ -40,12 +40,16 @@ class AddassessActivity : AppCompatActivity() {
 
     }
 
-    private fun getMenuList(id : String){
+    private fun getMenuList(id: String, keyword: Editable){
         lifecycleScope.launch{
             //UI
             val res = withContext(Dispatchers.IO){
-                InfoClientMenu.service.getData(id)
+                InfoClientMenu.service.getData(id, keyword)
             }
+            Log.d("myTag", "서버에서 데이터 받음, " + res)
+            Log.d("myTag", "0 : " + res.menuList[0])
+            Log.d("myTag", "1 : " + res.menuList[1])
+
             //UI
             val answer = res.menuList
             if(answer.isNotEmpty()){
