@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
+//import com.bumptech.glide.Glide
 import com.example.version2mechuli.databinding.ActivitySigndataBinding
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
@@ -38,9 +38,7 @@ class SigndataActivity : AppCompatActivity() {
         userpw = secondIntent.getStringExtra("pw").toString()
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
-        Log.d("myTag", "이미지 src 요청")
         getMenuImg(arrMenu)
-        Log.d("myTag", "이미지 src 받아옴")
 
         binding = ActivitySigndataBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -85,7 +83,6 @@ class SigndataActivity : AppCompatActivity() {
     private fun getMenuImg(nameList : ArrayList<String>){
 
         val imgList  = arrayListOf<String>()
-
             lifecycleScope.launch {
                 Log.d("myTag", "서버 요청 실행")
                 //UI
@@ -93,7 +90,14 @@ class SigndataActivity : AppCompatActivity() {
                     InfoClientMenuImg.service.requestData(nameList)
                 }
                 //UI
-                Log.d("myTag", "서버 데이터 받음" + res.get(0).foodName)
+//                Log.d("myTag", "서버 데이터 받음 : " + res)
+                Log.d("myTag", "0 : " + res.get(0))
+                Log.d("myTag", "1 : " + res.get(1))
+                Log.d("myTag", "2 : " + res.get(2))
+                Log.d("myTag", "3 : " + res.get(3))
+                Log.d("myTag", "4 : " + res.get(4))
+//                Log.d("myTag", res.get(0).resultList.toString())
+//                Log.d("myTag", "서버 데이터 받음" + res.get(0).foodName)
 
             }
 

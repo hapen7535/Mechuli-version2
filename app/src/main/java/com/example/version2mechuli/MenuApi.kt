@@ -6,7 +6,7 @@ import retrofit2.http.*
 interface MenuApi {
 
     @FormUrlEncoded
-    @POST("/registration")
+    @POST("/getMenuList")
     suspend fun getData(
         @Field("id") id : String,
     ): GetMenuList
