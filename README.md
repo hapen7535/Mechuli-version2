@@ -19,6 +19,6 @@ I would recommend you to use Pixel 2 for android emulator.
 ## Libraries Used  
 |              |            |
 |--------------|------------|
-| Network      | Retrofit2  |
+| Network      | OkHttp3,Retrofit2  |
 | Asynchronous | Coroutine  |
 | JetPack      | Lifecycles, DataBinding |
