@@ -110,19 +110,6 @@ class SigndataActivity : AppCompatActivity() {
 //        }
 //    }
 
-    private fun getRatings(textLayout : ArrayList<TextView>, ratingLayout : ArrayList<RatingBar>){
-
-        var i = 0
-        textLayout.forEach {
-            ratingLayout[i].setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
-                ratingBar.rating
-                ratingList[it.text as String] = rating
-                Log.d("ratingList", ratingList.toString())
-            }
-            i += 1
-        }
-    }
-
     private fun getMenuImg(nameList : ArrayList<String>, imgLayout : ArrayList<ImageView>,textlayout : ArrayList<TextView>){
 
         var i = 0

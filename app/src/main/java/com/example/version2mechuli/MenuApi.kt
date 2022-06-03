@@ -10,7 +10,7 @@ interface MenuApi {
     @POST("/getMenuList")
     suspend fun getData(
         @Field("id") id : String,
-        @Field("keyword") keyword : Editable,
+//        @Field("menu_name") menuName : String,
     ): GetMenuList
 
 }
