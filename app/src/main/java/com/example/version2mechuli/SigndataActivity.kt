@@ -36,10 +36,21 @@ class SigndataActivity : AppCompatActivity() {
 
         var imgList = arrayListOf(binding.menuImg1, binding.menuImg2, binding.menuImg3, binding.menuImg4, binding.menuImg5)
         var textList = arrayListOf(binding.menuName1, binding.menuName2, binding.menuName3, binding.menuName4, binding.menuName5)
+        var ratingBars = arrayListOf(binding.ratingBar1,binding.ratingBar2, binding.ratingBar3, binding.ratingBar4, binding.ratingBar5)
         val secondIntent = getIntent()
         userid = secondIntent.getStringExtra("id").toString()
         userpw = secondIntent.getStringExtra("pw").toString()
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
+
+        var i = 0
+        arrMenu.forEach {
+            ratingBars[i].setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
+                ratingBar.rating
+                ratingList[it] = rating
+                Log.d("ratingList", ratingList.toString())
+            }
+            i += 1
+        }
 
         getMenuImg(arrMenu, imgList, textList)
 
@@ -51,6 +62,10 @@ class SigndataActivity : AppCompatActivity() {
         }
 
         binding.signTest.setOnClickListener {
+
+//            getRatings(textList, ratingBars)
+
+            Log.d("rating Size", "${ratingList.size}")
             if(ratingList.size < 5){
                 Toast.makeText(this, "해당 메뉴의 점수를 모두 매겨주세요.", Toast.LENGTH_SHORT).show()
             }
@@ -60,11 +75,11 @@ class SigndataActivity : AppCompatActivity() {
         }
     }
 
-    private fun menuSetting(arr: ArrayList<String>){
-
-            binding.menuName1.setText(arr[0])
-
-    }
+//    private fun menuSetting(arr: ArrayList<String>){
+//
+//            binding.menuName1.setText(arr[0])
+//
+//    }
 
 
 //    private fun addMenuView(arr : ArrayList<String>, imgRsc : ArrayList<String>){
@@ -95,6 +110,19 @@ class SigndataActivity : AppCompatActivity() {
 //        }
 //    }
 
+    private fun getRatings(textLayout : ArrayList<TextView>, ratingLayout : ArrayList<RatingBar>){
+
+        var i = 0
+        textLayout.forEach {
+            ratingLayout[i].setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
+                ratingBar.rating
+                ratingList[it.text as String] = rating
+                Log.d("ratingList", ratingList.toString())
+            }
+            i += 1
+        }
+    }
+
     private fun getMenuImg(nameList : ArrayList<String>, imgLayout : ArrayList<ImageView>,textlayout : ArrayList<TextView>){
 
         var i = 0
@@ -108,9 +136,6 @@ class SigndataActivity : AppCompatActivity() {
                 //UI
 
                 val answer = res.resultList
-//                this@SigndataActivity.imgList = answer.map{ it.image1 } as ArrayList<String>
-//
-//                addMenuView(arrMenu, imgList)
 
                 answer.forEach {
                     textlayout[i].setText(it.foodName)
@@ -123,13 +148,6 @@ class SigndataActivity : AppCompatActivity() {
                 Log.d("myTag", "서버 데이터 받음 : " + res)
                 Log.d("myTag", "0 : " + res.resultList[0])
                 Log.d("myTag", "1 : " + res.resultList[1])
-//                Log.d("myTag", "0 : " + res.get(0))
-//                Log.d("myTag", "1 : " + res.get(1))
-//                Log.d("myTag", "2 : " + res.get(2))
-//                Log.d("myTag", "3 : " + res.get(3))
-//                Log.d("myTag", "4 : " + res.get(4))
-//                Log.d("myTag", res.get(0).resultList.toString())
-//                Log.d("myTag", "서버 데이터 받음" + res.get(0).foodName)
 
             }
 
