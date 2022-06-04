@@ -56,14 +56,16 @@ class AddassessActivity : AppCompatActivity() {
     }
 
     private fun setNewRating(id : String, ratings : MutableMap<String, Float>){
+        Log.d("myTag", "서버로 전송, id : " + id + " , ratings : " + ratings)
 
         lifecycleScope.launch {
             //UI
             val res = withContext(Dispatchers.IO) {
-                InfoClientRating.service.requestData(id, ratingList)
+                InfoClientRating.service.requestData(id, ratings)
             }
             val answer = res.result
             if(answer){
+                Log.d("myTag", "평점 수정 완료")
                 Toast.makeText(this@AddassessActivity, "평점을 수정하였습니다.", Toast.LENGTH_LONG).show()
             }
             else{
@@ -80,8 +82,14 @@ class AddassessActivity : AppCompatActivity() {
                 InfoClientMenu.service.getData(id)
             }
             Log.d("myTag", "서버에서 데이터 받음, " + res)
-            Log.d("myTag", "0 : " + res.menuList[0])
-            Log.d("myTag", "1 : " + res.menuList[1])
+//            Log.d("myTag", "0 : " + res.menuList[0])
+//            Log.d("myTag", "1 : " + res.menuList[1])
+//            Log.d("myTag", "0 : " + res.menuList[2])
+//            Log.d("myTag", "1 : " + res.menuList[3])
+//            Log.d("myTag", "1 : " + res.menuList[4])
+
+            val sendfoodNameAndRate = mutableMapOf("떡볶이" to 5.0f)
+            setNewRating(id, sendfoodNameAndRate)
 
             //UI
             val answer = res.menuList
