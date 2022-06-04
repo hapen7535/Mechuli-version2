@@ -2,9 +2,14 @@ package com.example.version2mechuli
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import com.example.version2mechuli.databinding.ActivityLoginBinding
 import com.example.version2mechuli.databinding.ActivityRandomBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class RandomActivity : AppCompatActivity() {
 
@@ -15,6 +20,8 @@ class RandomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random)
 
+        getRandomMenuList()
+
         binding = ActivityRandomBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -24,13 +31,9 @@ class RandomActivity : AppCompatActivity() {
         binding.returnbtn.setOnClickListener {
             onBackPressed()
         }
-
-
     }
 
     private fun addTagView(arr : ArrayList<String>){
-
-
         arr.forEach{
 
             val tagView = layoutInflater.inflate(R.layout.tags, null, false)
@@ -43,7 +46,18 @@ class RandomActivity : AppCompatActivity() {
                 //tagView.setBackgroundResource(R.drawable.taglayout);
             }
         }
+    }
 
+    private fun getRandomMenuList() {
+        var id = ""
+        lifecycleScope.launch {
+            Log.d("myTag", "Random menuList 가져오기")
+            //UI
+            val res = withContext(Dispatchers.IO) {
+                InfoClientRandom.service.requestData(id)
+            }
+            Log.d("myTag", "결과 값 : " + res)
+        }
     }
 
 }
