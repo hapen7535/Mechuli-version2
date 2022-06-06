@@ -170,6 +170,34 @@ class RandomActivity : AppCompatActivity() {
                                 i += 1
                             }
                         }
+                        R.id.tagJap -> {
+
+                            var i = 0
+
+                            ele.forEach {
+
+                                if (it.equals("일식")) {
+                                    menuList[i].visibility = View.VISIBLE
+                                } else {
+                                    menuList[i].visibility = View.GONE
+                                }
+                                i += 1
+                            }
+                        }
+                        R.id.tagEtc -> {
+
+                            var i = 0
+
+                            ele.forEach {
+
+                                if (it.equals("이외")) {
+                                    menuList[i].visibility = View.VISIBLE
+                                } else {
+                                    menuList[i].visibility = View.GONE
+                                }
+                                i += 1
+                            }
+                        }
 
                     }
 
