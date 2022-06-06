@@ -194,6 +194,14 @@
 
     </LinearLayout>
 
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_marginTop="100dp"
+        style="@android:style/Widget.Holo.ProgressBar.Large"
+        android:layout_width="match_parent"
+        android:layout_height="162dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -234,6 +242,7 @@
                     android:text="떡볶이"
                     android:textSize="17sp" />
 
+
                 <TextView
                     android:gravity="center"
                     android:id="@+id/subText1"
@@ -243,6 +252,7 @@
                     android:text="떡볶이"
                     android:visibility="gone"
                     android:textSize="17sp" />
+
 
                 <!--                <RatingBar-->
                 <!--                    android:id="@+id/ratingBar1"-->

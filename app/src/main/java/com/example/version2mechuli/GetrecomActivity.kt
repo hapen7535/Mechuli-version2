@@ -52,6 +52,15 @@ class GetrecomActivity : AppCompatActivity() {
         }
     }
 
+    private fun init(){
+        showProgress(false)
+    }
+
+    fun showProgress(isShow : Boolean){
+        if(isShow) binding.progressBar.visibility = View.VISIBLE
+        else binding.progressBar.visibility = View.GONE
+    }
+
     private fun getRecommendMenuList(id : String, imgLayout: ArrayList<ImageView>, textlayout: ArrayList<TextView>, menuList: ArrayList<LinearLayout>) {
 
         var j = 0
@@ -68,110 +77,115 @@ class GetrecomActivity : AppCompatActivity() {
 
             var answer = res.menuList
 
-            answer.forEach {
-                textlayout[j].setText(it.foodName)
+            if (answer.isEmpty()) {
+                init()
+            } else {
 
-                Glide.with(this@GetrecomActivity)
-                    .load(it.image_2)
-                    .into(imgLayout[j])
+                answer.forEach {
+                    textlayout[j].setText(it.foodName)
 
-                ele.add(it.type_1)
+                    Glide.with(this@GetrecomActivity)
+                        .load(it.image_2)
+                        .into(imgLayout[j])
 
-                Log.d("ele", "${ele}")
-                j += 1
-            }
+                    ele.add(it.type_1)
 
-            if (ele.size == 5) {
+                    Log.d("ele", "${ele}")
+                    j += 1
+                }
 
-                binding.addTag.setOnCheckedChangeListener { group, checkedId ->
+                if (ele.size == 5) {
 
-                    when (checkedId) {
+                    binding.addTag.setOnCheckedChangeListener { group, checkedId ->
 
-                        R.id.tagAll -> {
-                            menuList.forEach {
-                                it.visibility = View.VISIBLE
-                            }
-                        }
-                        R.id.tagChi -> {
+                        when (checkedId) {
 
-                            var i = 0
-
-                            ele.forEach {
-
-                                if (it.equals("중식")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                            R.id.tagAll -> {
+                                menuList.forEach {
+                                    it.visibility = View.VISIBLE
                                 }
-                                i += 1
                             }
-                        }
-                        R.id.tagSna -> {
-                            var i = 0
-                            ele.forEach {
-                                if (it.equals("분식")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                            R.id.tagChi -> {
+
+                                var i = 0
+
+                                ele.forEach {
+
+                                    if (it.equals("중식")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
                                 }
-                                i += 1
                             }
-                        }
-                        R.id.tagWes -> {
-                            var i = 0
-                            ele.forEach {
-                                if (it.equals("양식")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                            R.id.tagSna -> {
+                                var i = 0
+                                ele.forEach {
+                                    if (it.equals("분식")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
                                 }
-                                i += 1
                             }
-                        }
-                        R.id.tagKor -> {
-                            var i = 0
-                            ele.forEach {
-                                if (it.equals("한식")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                            R.id.tagWes -> {
+                                var i = 0
+                                ele.forEach {
+                                    if (it.equals("양식")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
                                 }
-                                i += 1
                             }
-                        }
-                        R.id.tagJap -> {
-
-                            var i = 0
-
-                            ele.forEach {
-
-                                if (it.equals("일식")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                            R.id.tagKor -> {
+                                var i = 0
+                                ele.forEach {
+                                    if (it.equals("한식")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
                                 }
-                                i += 1
                             }
-                        }
-                        R.id.tagEtc -> {
+                            R.id.tagJap -> {
 
-                            var i = 0
+                                var i = 0
 
-                            ele.forEach {
+                                ele.forEach {
 
-                                if (it.equals("이가")) {
-                                    menuList[i].visibility = View.VISIBLE
-                                } else {
-                                    menuList[i].visibility = View.GONE
+                                    if (it.equals("일식")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
                                 }
-                                i += 1
                             }
+                            R.id.tagEtc -> {
+
+                                var i = 0
+
+                                ele.forEach {
+
+                                    if (it.equals("이가")) {
+                                        menuList[i].visibility = View.VISIBLE
+                                    } else {
+                                        menuList[i].visibility = View.GONE
+                                    }
+                                    i += 1
+                                }
+                            }
+
                         }
 
                     }
 
                 }
-
             }
         }
     }

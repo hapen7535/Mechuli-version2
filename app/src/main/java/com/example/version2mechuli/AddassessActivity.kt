@@ -80,8 +80,8 @@ class AddassessActivity : AppCompatActivity() {
             }
             Log.d("myTag", "서버에서 데이터 받음, " + res)
 
-            val sendfoodNameAndRate = mutableMapOf("떡볶이" to 5.0f)
-            setNewRating(id, sendfoodNameAndRate)
+//            val sendfoodNameAndRate = mutableMapOf("떡볶이" to 5.0f)
+//            setNewRating(id, sendfoodNameAndRate)
 
             //UI
             val answer = res.menuList
@@ -122,6 +122,8 @@ class AddassessActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
 
 
