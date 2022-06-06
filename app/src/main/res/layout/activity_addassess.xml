@@ -190,6 +190,7 @@
             android:background="#59FFCC3A"
             android:fontFamily="@font/notosanskrbold"
             android:text="추가하기"
+            android:visibility="gone"
             android:textSize="18sp" />
 
     </RelativeLayout>
