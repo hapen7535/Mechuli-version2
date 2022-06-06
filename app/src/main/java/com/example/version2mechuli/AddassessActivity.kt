@@ -28,14 +28,11 @@ class AddassessActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_addassess)
 
-//        binding = ActivityAddassessBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_addassess)
         val spf = getSharedPreferences("userInfo", MODE_PRIVATE)
         val userid = spf.getString("userId", "")!!
-        val inputWord = binding.searchMenu.text
+//        val inputWord = binding.searchMenu.text
 
         getMenuList(userid)
 
@@ -82,11 +79,6 @@ class AddassessActivity : AppCompatActivity() {
                 InfoClientMenu.service.getData(id)
             }
             Log.d("myTag", "서버에서 데이터 받음, " + res)
-//            Log.d("myTag", "0 : " + res.menuList[0])
-//            Log.d("myTag", "1 : " + res.menuList[1])
-//            Log.d("myTag", "0 : " + res.menuList[2])
-//            Log.d("myTag", "1 : " + res.menuList[3])
-//            Log.d("myTag", "1 : " + res.menuList[4])
 
             val sendfoodNameAndRate = mutableMapOf("떡볶이" to 5.0f)
             setNewRating(id, sendfoodNameAndRate)
