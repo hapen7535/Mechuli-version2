@@ -13,6 +13,8 @@ data class MenuData(
     val image_1 : String,
     @SerializedName("image_2")
     val image_2 : String,
+    @SerializedName("type_1")
+    val type_1 : String,
     @SerializedName("rating")
     val rating : Float,
 )

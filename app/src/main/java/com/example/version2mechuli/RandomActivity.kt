@@ -38,20 +38,8 @@ class RandomActivity : AppCompatActivity() {
         )
         val menuLayouts =
             arrayListOf(binding.menu1, binding.menu2, binding.menu3, binding.menu4, binding.menu5)
-        val subTextList = arrayListOf(
-            binding.subText1,
-            binding.subText2,
-            binding.subText3,
-            binding.subText4,
-            binding.subText5
-        )
 
         getRandomMenuList(imgList, textList, menuLayouts)
-//        val getter = getRandomMenuList(imgList, textList, subTextList)
-//        Log.d("getter", "${getter}")
-
-        //arrTag = arrayListOf("전체","분식","한식","양식","중식")
-        //addTagView(arrTag)
 
         binding.returnbtn.setOnClickListener {
             onBackPressed()
@@ -64,26 +52,25 @@ class RandomActivity : AppCompatActivity() {
 
     }
 
-    private fun addTagView(arr : ArrayList<String>){
-        arr.forEach{
-
-            val tagView = layoutInflater.inflate(R.layout.tags, null, false)
-            val tagViewText = tagView.findViewById<TextView>(R.id.tagRadio)
-
-            tagViewText.setText(it)
-            binding.addTag.addView(tagView)
-
-            tagView.setOnClickListener {
-                //tagView.setBackgroundResource(R.drawable.taglayout);
-            }
-        }
-    }
+//    private fun addTagView(arr : ArrayList<String>){
+//        arr.forEach{
+//
+//            val tagView = layoutInflater.inflate(R.layout.tags, null, false)
+//            val tagViewText = tagView.findViewById<TextView>(R.id.tagRadio)
+//
+//            tagViewText.setText(it)
+//            binding.addTag.addView(tagView)
+//
+//            tagView.setOnClickListener {
+//                //tagView.setBackgroundResource(R.drawable.taglayout);
+//            }
+//        }
+//    }
 
     private fun getRandomMenuList(imgLayout: ArrayList<ImageView>, textlayout: ArrayList<TextView>, menuList: ArrayList<LinearLayout>) {
         var id = ""
         var j = 0
         var ele = ArrayList<String>()
-        var menus = mutableListOf<SetRandomMenuList>()
 
         lifecycleScope.launch {
             Log.d("myTag", "Random menuList 가져오기")
@@ -104,8 +91,6 @@ class RandomActivity : AppCompatActivity() {
                     .load(it.image_2)
                     .into(imgLayout[j])
 
-//                ele.type = it.type_1
-//                ele.foodName = it.foodName
                 ele.add(it.type_1)
 
                 Log.d("ele", "${ele}")
@@ -190,7 +175,7 @@ class RandomActivity : AppCompatActivity() {
 
                             ele.forEach {
 
-                                if (it.equals("이외")) {
+                                if (it.equals("이가")) {
                                     menuList[i].visibility = View.VISIBLE
                                 } else {
                                     menuList[i].visibility = View.GONE
