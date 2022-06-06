@@ -36,7 +36,7 @@ class AddassessActivity : AppCompatActivity() {
 
         getMenuList(userid)
 
-        binding.assess = Description("메뉴를 선택하여 해당 메뉴의 평점을 수정하거나 추가해주세요.\n \n평점을 수정하거나 추가할 경우, 자동으로 평점 이력이 수정됩니다.")
+        binding.assess = Description("메뉴를 선택하여\n 해당 메뉴의 평점을 수정하거나 추가해주세요.")
 
         binding.ratingBar.setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
 
