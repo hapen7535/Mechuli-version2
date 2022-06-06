@@ -1,33 +1,23 @@
 package com.example.version2mechuli
 import android.content.Intent
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.version2mechuli.InfoClient
-import com.example.version2mechuli.R
-import com.example.version2mechuli.SigndataActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.version2mechuli.databinding.ActivitySignupBinding
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import kotlinx.coroutines.*
 import retrofit2.Call
-import retrofit2.Response
-import retrofit2.Callback
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.io.Serializable
+import kotlin.math.sign
 
 class SignupActivity : AppCompatActivity() {
 
     lateinit var binding : ActivitySignupBinding
     private val idch by lazy { findViewById<EditText>(R.id.setID)}
-    private val callList = mutableListOf<Call<*>>()
+    lateinit var signInfo : SignInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,10 +32,12 @@ class SignupActivity : AppCompatActivity() {
         binding.ageSpinner.adapter = myAgeAdapterr
         binding.ageSpinner.prompt = "연령대를 선택해주세요"
 
+        val selectedAge : String = binding.ageSpinner.getSelectedItem().toString()
 
         var userId = binding.setID.text
         var userPw = binding.setPW.text
         var duplicatePw = binding.dupPw.text
+        var gender = ""
 
 
         binding.signStart.setOnClickListener{
@@ -62,10 +54,28 @@ class SignupActivity : AppCompatActivity() {
             else {
 //                Log.d("myTag", "평가이력 체크로 이동")
                 //sendUserInfo(userId.toString(), userPw.toString())
-                id = userId.toString()
-                pw = userPw.toString()
-                ActivityStart(id, pw)
+                if(id != null && pw != null && gender != null && selectedAge != null){
+                    id = userId.toString()
+                    pw = userPw.toString()
+                    ActivityStart(id, pw, gender, selectedAge)
+                }
+                else{
+                    Toast.makeText(applicationContext, "모든 정보를 입력해주세요.", Toast.LENGTH_LONG).show()
+                }
             }
+        }
+
+        binding.gender.setOnCheckedChangeListener{ _, checkId ->
+
+            when(checkId){
+                R.id.female -> {
+                    gender = "여자"
+                }
+                R.id.male -> {
+                    gender = "남자"
+                }
+            }
+
         }
 
         binding.returnbtn.setOnClickListener{
@@ -96,10 +106,13 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    private fun ActivityStart(userid : String, userpw : String){
+    private fun ActivityStart(userid : String, userpw : String, gender : String, age : String){
         val intent = Intent(this, SigndataActivity::class.java)
-        intent.putExtra("id", userid)
-        intent.putExtra("pw",userpw)
+//        intent.putExtra("id", userid)
+//        intent.putExtra("pw",userpw)
+//        intent.putExtra("gender",gender)
+//        intent.putExtra("age", age)
+        intent.putExtra("info", SignInfo(userid, userpw, gender, age))
         startActivity(intent)
     }
 

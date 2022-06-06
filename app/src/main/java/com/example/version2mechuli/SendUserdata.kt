@@ -12,6 +12,8 @@ interface SendUserdata {
     suspend fun requestData(
         @Field("id") id : String,
         @Field("pw") pw : String,
+        @Field("sex") sex : String,
+        @Field("age") user : String,
         @Field("signUpRatings") ratings : MutableMap<String, Float>
     ): GetData // 서버에서 받아올 데이터 형식
 

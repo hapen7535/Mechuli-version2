@@ -26,6 +26,8 @@ class SigndataActivity : AppCompatActivity() {
     lateinit var arrMenu : ArrayList<String>
     lateinit var userid : String
     lateinit var userpw : String
+    lateinit var gender : String
+    lateinit var age : String
 
     var ratingList = mutableMapOf<String, Float>()
 
@@ -38,8 +40,13 @@ class SigndataActivity : AppCompatActivity() {
         var textList = arrayListOf(binding.menuName1, binding.menuName2, binding.menuName3, binding.menuName4, binding.menuName5)
         var ratingBars = arrayListOf(binding.ratingBar1,binding.ratingBar2, binding.ratingBar3, binding.ratingBar4, binding.ratingBar5)
         val secondIntent = getIntent()
-        userid = secondIntent.getStringExtra("id").toString()
-        userpw = secondIntent.getStringExtra("pw").toString()
+        val signInfo = intent.getSerializableExtra("info") as SignInfo
+        userid = signInfo.id
+        userpw = signInfo.pw
+        gender = signInfo.gender
+        age = signInfo.age
+//        userid = secondIntent.getStringExtra("id").toString()
+//        userpw = secondIntent.getStringExtra("pw").toString()
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
         var i = 0
@@ -70,45 +77,11 @@ class SigndataActivity : AppCompatActivity() {
                 Toast.makeText(this, "해당 메뉴의 점수를 모두 매겨주세요.", Toast.LENGTH_SHORT).show()
             }
             else{
-                completeInfo(userid, userpw, ratingList)
+                completeInfo(userid, userpw, age, gender, ratingList)
             }
         }
     }
 
-//    private fun menuSetting(arr: ArrayList<String>){
-//
-//            binding.menuName1.setText(arr[0])
-//
-//    }
-
-
-//    private fun addMenuView(arr : ArrayList<String>, imgRsc : ArrayList<String>){
-//
-//        var i = 0
-//        arr.forEach{
-//
-//            val menuView = layoutInflater.inflate(R.layout.menutest_layout, null, false)
-//            val menuViewText = menuView.findViewById<TextView>(R.id.menuName)
-//            val menuRating = menuView.findViewById<RatingBar>(R.id.ratingBar)
-//            val menuImg = menuView.findViewById<ImageView>(R.id.menuImg)
-//            val rating = menuRating.rating
-//
-//            menuViewText.setText(it)
-//            Glide.with(this)
-//                .load(imgRsc[i])
-//                .into(menuImg)
-//            binding.addMenu.addView(menuView)
-//
-//            menuRating.setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
-//                ratingBar.rating
-//                ratingList[it] = rating
-//                Log.d("ratingList", ratingList.toString())
-//            }
-//
-//            i += 1
-//
-//        }
-//    }
 
     private fun getMenuImg(nameList : ArrayList<String>, imgLayout : ArrayList<ImageView>,textlayout : ArrayList<TextView>){
 
@@ -140,11 +113,11 @@ class SigndataActivity : AppCompatActivity() {
 
     }
 
-    private fun completeInfo(id : String, pw : String, ratings : MutableMap<String, Float>){
+    private fun completeInfo(id : String, pw : String, age : String, gender : String, ratings : MutableMap<String, Float>){
         lifecycleScope.launch{
             //UI
             val res = withContext(Dispatchers.IO){
-                InfoClientData.service.requestData(id,pw,ratings)
+                InfoClientData.service.requestData(id,pw, gender, age, ratings)
             }
             //UI
             val answer = res.result
