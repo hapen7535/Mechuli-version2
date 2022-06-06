@@ -3,6 +3,7 @@ package com.example.version2mechuli
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.example.version2mechuli.databinding.ActivityGetrecomBinding
@@ -17,13 +18,17 @@ class GetrecomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_getrecom)
+//        setContentView(R.layout.activity_getrecom)
+
+        binding = ActivityGetrecomBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var id = "1111"
         getRecommendMenuList(id)
 
-        binding = ActivityGetrecomBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        if(binding.tagAll.isChecked){
+
+        }
 
         binding.returnbtn.setOnClickListener{
             onBackPressed()

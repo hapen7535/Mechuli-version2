@@ -84,60 +84,64 @@
                     android:id="@+id/addTag">
 
                     <RadioButton
+                        android:id="@+id/tagAll"
                         android:layout_width="wrap_content"
-                        android:background="@drawable/selector"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selector"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:gravity="center"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
                         android:text="전체"
                         android:textColor="#5E5E5E"
-                        android:paddingLeft="25dp"
-                        android:fontFamily="@font/notosanskrbold"
-                        android:layout_margin="5dp"
-                        android:paddingRight="25dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:id="@+id/tagAll" />
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
+                        android:id="@+id/tagKor"
                         android:layout_width="wrap_content"
-                        android:background="@drawable/selector"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selector"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:gravity="center"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
                         android:text="한식"
-                        android:layout_margin="5dp"
                         android:textColor="#5E5E5E"
-                        android:paddingLeft="25dp"
-                        android:fontFamily="@font/notosanskrbold"
-                        android:paddingRight="25dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:id="@+id/tagKor" />
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
+                        android:id="@+id/tagSna"
                         android:layout_width="wrap_content"
-                        android:background="@drawable/selector"
-                        android:layout_margin="5dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selector"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:gravity="center"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
                         android:text="분식"
                         android:textColor="#5E5E5E"
-                        android:paddingLeft="25dp"
-                        android:fontFamily="@font/notosanskrbold"
-                        android:paddingRight="25dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:id="@+id/tagSna" />
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
+                        android:id="@+id/tagWes"
                         android:layout_width="wrap_content"
-                        android:background="@drawable/selector"
-                        android:layout_margin="5dp"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selector"
+                        android:button="@null"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:gravity="center"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
                         android:text="양식"
                         android:textColor="#5E5E5E"
-                        android:paddingLeft="25dp"
-                        android:fontFamily="@font/notosanskrbold"
-                        android:paddingRight="25dp"
-                        android:button="@null"
-                        android:gravity="center"
-                        android:id="@+id/tagWes" />
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
@@ -162,11 +166,310 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         android:id="@+id/menuSpace">
 
+        <LinearLayout
+            android:id="@+id/menu1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_margin="5dp"
+            android:background="@drawable/menuground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_margin="3dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tteok_resize"
+                android:id="@+id/menuImg1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/menuName1"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/subText1"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:visibility="gone"
+                    android:textSize="17sp" />
+
+<!--                <RatingBar-->
+<!--                    android:id="@+id/ratingBar1"-->
+<!--                    style="@style/Widget.AppCompat.RatingBar.Indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:isIndicator="false"-->
+<!--                    android:max="5"-->
+<!--                    android:stepSize="0.5"-->
+<!--                    android:theme="@style/RatingBar"-->
+<!--                    tools:ignore="SpeakableTextPresentCheck" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu2"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/menuground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_margin="3dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tteok_resize"
+                android:id="@+id/menuImg2"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/menuName2"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:gravity="center"
+                    android:text="떡볶이"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/subText2"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:visibility="gone"
+                    android:textSize="17sp" />
+
+<!--                <RatingBar-->
+<!--                    android:id="@+id/ratingBar2"-->
+<!--                    style="@style/Widget.AppCompat.RatingBar.Indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:isIndicator="false"-->
+<!--                    android:max="5"-->
+<!--                    android:stepSize="0.5"-->
+<!--                    android:theme="@style/RatingBar"-->
+<!--                    tools:ignore="SpeakableTextPresentCheck" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menu3"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/menuground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_margin="3dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tteok_resize"
+                android:id="@+id/menuImg3"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/menuName3"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/subText3"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:visibility="gone"
+                    android:textSize="17sp" />
+
+<!--                <RatingBar-->
+<!--                    android:id="@+id/ratingBar3"-->
+<!--                    style="@style/Widget.AppCompat.RatingBar.Indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:isIndicator="false"-->
+<!--                    android:max="5"-->
+<!--                    android:stepSize="0.5"-->
+<!--                    android:theme="@style/RatingBar"-->
+<!--                    tools:ignore="SpeakableTextPresentCheck" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu4"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/menuground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_margin="3dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tteok_resize"
+                android:id="@+id/menuImg4"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/menuName4"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/subText4"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:visibility="gone"
+                    android:textSize="17sp" />
+
+<!--                <RatingBar-->
+<!--                    android:id="@+id/ratingBar4"-->
+<!--                    style="@style/Widget.AppCompat.RatingBar.Indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:isIndicator="false"-->
+<!--                    android:max="5"-->
+<!--                    android:stepSize="0.5"-->
+<!--                    android:theme="@style/RatingBar"-->
+<!--                    tools:ignore="SpeakableTextPresentCheck" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/menu5"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/menuground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_margin="3dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tteok_resize"
+                android:id="@+id/menuImg5"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/menuName5"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/subText5"
+                    android:layout_width="178dp"
+                    android:layout_height="38dp"
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:text="떡볶이"
+                    android:visibility="gone"
+                    android:textSize="17sp" />
+
+<!--                <RatingBar-->
+<!--                    android:id="@+id/ratingBar5"-->
+<!--                    style="@style/Widget.AppCompat.RatingBar.Indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:isIndicator="false"-->
+<!--                    android:max="5"-->
+<!--                    android:stepSize="0.5"-->
+<!--                    android:theme="@style/RatingBar"-->
+<!--                    tools:ignore="SpeakableTextPresentCheck" />-->
+
+            </LinearLayout>
+
     </LinearLayout>
+
+</LinearLayout>
 
 </LinearLayout>

@@ -10,337 +10,337 @@
             type="com.example.version2mechuli.SigndataActivity" />
     </data>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SigndataActivity">
-
-    <GridLayout
-        android:id="@+id/mainBar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:rowCount="6"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/returnbtn"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:background="#FFFFFF"
-            android:drawableStart="@drawable/backdesign"
-            android:gravity="center"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/hancommalangmalangbold"
-            android:gravity="center"
-            android:text="메추리"
-            android:textSize="35sp" />
-
-
-    </GridLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        tools:context=".SigndataActivity">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="추천받기 위해 평가이력이 필요해요."
-            android:fontFamily="@font/notosanskrmedium"
-            android:layout_margin="10dp" />
+        <GridLayout
+            android:id="@+id/mainBar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="6"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            tools:ignore="SpeakableTextPresentCheck">
+            <Button
+                android:id="@+id/returnbtn"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#FFFFFF"
+                android:drawableStart="@drawable/backdesign"
+                android:gravity="center"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/hancommalangmalangbold"
+                android:gravity="center"
+                android:text="메추리"
+                android:textSize="35sp" />
+
+
+        </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/addMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/menu1"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/menuground"
-                    android:orientation="horizontal">
+                    android:text="추천받기 위해 평가이력이 필요해요."
+                    android:fontFamily="@font/notosanskrmedium"
+                    android:layout_margin="10dp" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tteok_resize"
-                        android:id="@+id/menuImg1"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    tools:ignore="SpeakableTextPresentCheck">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:id="@+id/addMenu"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:gravity="center"
-                            android:id="@+id/menuName1"
-                            android:layout_width="178dp"
-                            android:layout_height="38dp"
-                            android:fontFamily="@font/notosanskrmedium"
-                            android:text="떡볶이"
-                            android:textSize="17sp" />
+                        <LinearLayout
+                            android:id="@+id/menu1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/menuground"
+                            android:orientation="horizontal">
 
-                        <RatingBar
-                            android:id="@+id/ratingBar1"
-                            style="@style/Widget.AppCompat.RatingBar.Indicator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="5dp"
-                            android:isIndicator="false"
-                            android:max="5"
-                            android:stepSize="0.5"
-                            android:theme="@style/RatingBar"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/tteok_resize"
+                                android:id="@+id/menuImg1"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:id="@+id/menuName1"
+                                    android:layout_width="178dp"
+                                    android:layout_height="38dp"
+                                    android:fontFamily="@font/notosanskrmedium"
+                                    android:text="떡볶이"
+                                    android:textSize="17sp" />
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar1"
+                                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="5dp"
+                                    android:isIndicator="false"
+                                    android:max="5"
+                                    android:stepSize="0.5"
+                                    android:theme="@style/RatingBar"
+                                    tools:ignore="SpeakableTextPresentCheck" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/menu2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/menuground"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/tteok_resize"
+                                android:id="@+id/menuImg2"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:id="@+id/menuName2"
+                                    android:layout_width="178dp"
+                                    android:layout_height="38dp"
+                                    android:fontFamily="@font/notosanskrmedium"
+                                    android:text="떡볶이"
+                                    android:textSize="17sp" />
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar2"
+                                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="5dp"
+                                    android:isIndicator="false"
+                                    android:max="5"
+                                    android:stepSize="0.5"
+                                    android:theme="@style/RatingBar"
+                                    tools:ignore="SpeakableTextPresentCheck" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/menu3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/menuground"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/tteok_resize"
+                                android:id="@+id/menuImg3"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:id="@+id/menuName3"
+                                    android:layout_width="178dp"
+                                    android:layout_height="38dp"
+                                    android:fontFamily="@font/notosanskrmedium"
+                                    android:text="떡볶이"
+                                    android:textSize="17sp" />
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar3"
+                                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="5dp"
+                                    android:isIndicator="false"
+                                    android:max="5"
+                                    android:stepSize="0.5"
+                                    android:theme="@style/RatingBar"
+                                    tools:ignore="SpeakableTextPresentCheck" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/menu4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/menuground"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/tteok_resize"
+                                android:id="@+id/menuImg4"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:id="@+id/menuName4"
+                                    android:layout_width="178dp"
+                                    android:layout_height="38dp"
+                                    android:fontFamily="@font/notosanskrmedium"
+                                    android:text="떡볶이"
+                                    android:textSize="17sp" />
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar4"
+                                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="5dp"
+                                    android:isIndicator="false"
+                                    android:max="5"
+                                    android:stepSize="0.5"
+                                    android:theme="@style/RatingBar"
+                                    tools:ignore="SpeakableTextPresentCheck" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/menu5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/menuground"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/tteok_resize"
+                                android:id="@+id/menuImg5"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:gravity="center"
+                                    android:id="@+id/menuName5"
+                                    android:layout_width="178dp"
+                                    android:layout_height="38dp"
+                                    android:fontFamily="@font/notosanskrmedium"
+                                    android:text="떡볶이"
+                                    android:textSize="17sp" />
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar5"
+                                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginBottom="5dp"
+                                    android:isIndicator="false"
+                                    android:max="5"
+                                    android:stepSize="0.5"
+                                    android:theme="@style/RatingBar"
+                                    tools:ignore="SpeakableTextPresentCheck" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
 
                     </LinearLayout>
 
-                </LinearLayout>
 
-
-                <LinearLayout
-                    android:id="@+id/menu2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/menuground"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tteok_resize"
-                        android:id="@+id/menuImg2"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:gravity="center"
-                            android:id="@+id/menuName2"
-                            android:layout_width="178dp"
-                            android:layout_height="38dp"
-                            android:fontFamily="@font/notosanskrmedium"
-                            android:text="떡볶이"
-                            android:textSize="17sp" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar2"
-                            style="@style/Widget.AppCompat.RatingBar.Indicator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="5dp"
-                            android:isIndicator="false"
-                            android:max="5"
-                            android:stepSize="0.5"
-                            android:theme="@style/RatingBar"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/menu3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/menuground"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tteok_resize"
-                        android:id="@+id/menuImg3"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:gravity="center"
-                            android:id="@+id/menuName3"
-                            android:layout_width="178dp"
-                            android:layout_height="38dp"
-                            android:fontFamily="@font/notosanskrmedium"
-                            android:text="떡볶이"
-                            android:textSize="17sp" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar3"
-                            style="@style/Widget.AppCompat.RatingBar.Indicator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="5dp"
-                            android:isIndicator="false"
-                            android:max="5"
-                            android:stepSize="0.5"
-                            android:theme="@style/RatingBar"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/menu4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/menuground"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tteok_resize"
-                        android:id="@+id/menuImg4"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:gravity="center"
-                            android:id="@+id/menuName4"
-                            android:layout_width="178dp"
-                            android:layout_height="38dp"
-                            android:fontFamily="@font/notosanskrmedium"
-                            android:text="떡볶이"
-                            android:textSize="17sp" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar4"
-                            style="@style/Widget.AppCompat.RatingBar.Indicator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="5dp"
-                            android:isIndicator="false"
-                            android:max="5"
-                            android:stepSize="0.5"
-                            android:theme="@style/RatingBar"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/menu5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/menuground"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/tteok_resize"
-                        android:id="@+id/menuImg5"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:gravity="center"
-                            android:id="@+id/menuName5"
-                            android:layout_width="178dp"
-                            android:layout_height="38dp"
-                            android:fontFamily="@font/notosanskrmedium"
-                            android:text="떡볶이"
-                            android:textSize="17sp" />
-
-                        <RatingBar
-                            android:id="@+id/ratingBar5"
-                            style="@style/Widget.AppCompat.RatingBar.Indicator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="5dp"
-                            android:isIndicator="false"
-                            android:max="5"
-                            android:stepSize="0.5"
-                            android:theme="@style/RatingBar"
-                            tools:ignore="SpeakableTextPresentCheck" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
+                </ScrollView>
 
 
             </LinearLayout>
 
 
-        </ScrollView>
+            <Button
+                android:id="@+id/signTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#59FFCC3A"
+                android:fontFamily="@font/notosanskrbold"
+                android:text="회원가입"
+                android:textSize="18sp" />
 
+        </RelativeLayout>
 
     </LinearLayout>
-
-
-        <Button
-            android:id="@+id/signTest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#59FFCC3A"
-            android:fontFamily="@font/notosanskrbold"
-            android:text="회원가입"
-            android:textSize="18sp" />
-
-    </RelativeLayout>
-
-</LinearLayout>
 
 </layout>
