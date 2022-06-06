@@ -49,136 +49,210 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/signSet"
-        app:layout_constraintTop_toBottomOf="@id/mainBar"
-        app:layout_constraintBottom_toTopOf="@id/signStart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toTopOf="@+id/signStart"
+        app:layout_constraintTop_toBottomOf="@id/mainBar">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/signTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회원가입"
-            android:fontFamily="@font/notosanskrbold"
-            android:textSize="30sp"/>
-
             <TextView
+                android:id="@+id/signTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이디"
-                android:id="@+id/getID"
                 android:fontFamily="@font/notosanskrbold"
-                android:textSize="20sp"/>
+                android:text="회원가입"
+                android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/setID"
+            <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/signtext"
-                android:textColor="#757575"
-                app:layout_constraintTop_toBottomOf="@id/signTitle"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:scrollbars="none">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-<!--                <TextView-->
-<!--                    android:id="@+id/checkpoint"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:fontFamily="@font/notosanskrbold"-->
-<!--                    android:text=" "-->
-<!--                    android:textColor="#FF0000"-->
-<!--                     />-->
-
-                <TextView
-                    android:id="@+id/dupText"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/notosanskrbold"
-                    android:text=" "
-                    android:textColor="#FF0000" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/noneDup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/notosanskrbold"
-                    android:text="사용하실 수 있는 아이디입니다."
-                    android:textColor="#FF0000"
-                    android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/getID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:text="아이디"
+                        android:textSize="20sp" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/dupChk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginEnd="15dp"
-                    android:onClick="checkId"
-                    android:fontFamily="@font/notosanskrbold"
-                    android:text="중복확인"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    <EditText
+                        android:id="@+id/setID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/signtext"
+                        android:textColor="#757575"
+                        app:layout_constraintTop_toBottomOf="@id/signTitle"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="패스워드"
-               android:id="@+id/getPW"
-                android:fontFamily="@font/notosanskrbold"
-                android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/setPW"
-                android:inputType="textPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/signtext"
-                android:textColor="#757575"
-                app:layout_constraintTop_toBottomOf="@id/setID"
-                tools:ignore="SpeakableTextPresentCheck" />
+                        <TextView
+                            android:id="@+id/dupText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:text=" "
+                            android:textColor="#FF0000"
+                            tools:ignore="SpeakableTextPresentCheck" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="패스워드 확인"
-                android:id="@+id/getPWCh"
-                android:fontFamily="@font/notosanskrbold"
-                android:textSize="20sp"/>
+                        <TextView
+                            android:id="@+id/noneDup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:text="사용하실 수 있는 아이디입니다."
+                            android:textColor="#FF0000"
+                            android:visibility="gone" />
 
-            <EditText
-                android:inputType="textPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/signtext"
-                android:id="@+id/dupPw"
-                android:textColor="#757575"
-                app:layout_constraintTop_toBottomOf="@id/setPW"
-                tools:ignore="SpeakableTextPresentCheck" />
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/dupChk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginEnd="15dp"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:onClick="checkId"
+                            android:text="중복확인"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/getPW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:text="패스워드"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/setPW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/signtext"
+                        android:inputType="textPassword"
+                        android:textColor="#757575"
+                        app:layout_constraintTop_toBottomOf="@id/setID"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <TextView
+                        android:id="@+id/getPWCh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:text="패스워드 확인"
+                        android:textSize="20sp" />
+
+
+                    <EditText
+                        android:id="@+id/dupPw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/signtext"
+                        android:inputType="textPassword"
+                        android:textColor="#757575"
+                        app:layout_constraintTop_toBottomOf="@id/setPW"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskrbold"
+                        android:text="성별"
+                        android:textSize="20sp" />
+
+                    <RadioGroup
+                        android:id="@+id/gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:theme="@style/CustomRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:textColor="#747474"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:text="남자"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:textColor="#747474"
+                            android:theme="@style/CustomRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:text="여자"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:fontFamily="@font/notosanskrbold"
+                            android:text="나이"
+                            android:textSize="20sp" />
+
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/notosanskrbold"-->
+<!--                            android:text="연령대를 선택해주세요"-->
+<!--                            android:textSize="15sp" />-->
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/age_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dialog"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
 
         </LinearLayout>
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -26,7 +27,6 @@ class SignupActivity : AppCompatActivity() {
 
     lateinit var binding : ActivitySignupBinding
     private val idch by lazy { findViewById<EditText>(R.id.setID)}
-    //private val checkPoint by lazy { findViewById<TextView>(R.id.checkpoint) }
     private val callList = mutableListOf<Call<*>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +35,13 @@ class SignupActivity : AppCompatActivity() {
 
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val ageList = resources.getStringArray(R.array.ageArray)
+        val myAgeAdapterr = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, ageList)
+        myAgeAdapterr.setDropDownViewResource(R.layout.age_spinner)
+        binding.ageSpinner.adapter = myAgeAdapterr
+        binding.ageSpinner.prompt = "연령대를 선택해주세요"
+
 
         var userId = binding.setID.text
         var userPw = binding.setPW.text

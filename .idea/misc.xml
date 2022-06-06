@@ -29,6 +29,7 @@
         <entry key="app/src/main/res/drawable/addsubtheme.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.1995" />
         <entry key="app/src/main/res/drawable/buttonbackground.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/gender_selector.xml" value="0.142" />
         <entry key="app/src/main/res/drawable/getreccbtntheme.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/loginspace.xml" value="0.1805" />
@@ -42,10 +43,12 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_random.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signdata.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.16134751773049646" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/age_spinner.xml" value="0.25905797101449274" />
         <entry key="app/src/main/res/layout/fragment_addassess.xml" value="0.16134751773049646" />
         <entry key="app/src/main/res/layout/fragment_getrecommend.xml" value="0.334375" />
+        <entry key="app/src/main/res/layout/gender_tag.xml" value="0.20260416666666667" />
         <entry key="app/src/main/res/layout/menu_layout.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/menutest_layout.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/tags.xml" value="0.33177083333333335" />

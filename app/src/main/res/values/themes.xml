@@ -17,4 +17,8 @@
         <item name="colorControlNormal">#AEAEAE</item>
         <item name="colorControlActivated">#59FFCC3A</item>
     </style>
+    <style name="CustomRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/main</item>
+        <item name="colorControlNormal">@color/gray</item>
+    </style>
 </resources>
