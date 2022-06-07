@@ -45,6 +45,7 @@ class SigndataActivity : AppCompatActivity() {
         userpw = signInfo.pw
         gender = signInfo.gender
         age = signInfo.age
+//        Log.d("info", "${userid},${userpw},${gender},${age}")
 //        userid = secondIntent.getStringExtra("id").toString()
 //        userpw = secondIntent.getStringExtra("pw").toString()
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
