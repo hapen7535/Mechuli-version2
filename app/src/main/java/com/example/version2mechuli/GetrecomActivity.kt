@@ -77,7 +77,7 @@ class GetrecomActivity : AppCompatActivity() {
 
             var answer = res.menuList
 
-            if (answer.isEmpty()) {
+            if (answer.isNullOrEmpty()) {
                 init()
             } else {
 
