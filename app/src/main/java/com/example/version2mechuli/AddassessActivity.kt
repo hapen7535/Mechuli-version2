@@ -40,6 +40,7 @@ class AddassessActivity : AppCompatActivity() {
 
         binding.ratingBar.setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
 
+            ratingList = mutableMapOf<String, Float>()
             ratingList[binding.menuName.text.toString()] = binding.ratingBar.rating
             setNewRating(userid, ratingList)
 
