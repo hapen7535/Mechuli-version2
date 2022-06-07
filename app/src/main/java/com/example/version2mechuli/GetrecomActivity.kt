@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.version2mechuli.databinding.ActivityGetrecomBinding
@@ -47,18 +48,29 @@ class GetrecomActivity : AppCompatActivity() {
 
         getRecommendMenuList(userid, imgList, textList, menuLayouts)
 
+//        binding.progressBar.visibility = View.VISIBLE
+
+
         binding.returnbtn.setOnClickListener{
             onBackPressed()
         }
+
+        if(binding.menu1.isVisible){
+            showProgress(false)
+        }
+        else{
+            showProgress(true)
+        }
+
     }
 
-    private fun init(){
-        showProgress(false)
-    }
+//    private fun init(visible : Boolean){
+//        showProgress(visible)
+//    }
 
     fun showProgress(isShow : Boolean){
-        if(isShow) binding.progressBar.visibility = View.VISIBLE
-        else binding.progressBar.visibility = View.GONE
+        if(isShow) {binding.progressBar.visibility = View.VISIBLE}
+        else {binding.progressBar.visibility = View.GONE}
     }
 
     private fun getRecommendMenuList(id : String, imgLayout: ArrayList<ImageView>, textlayout: ArrayList<TextView>, menuList: ArrayList<LinearLayout>) {
@@ -75,12 +87,15 @@ class GetrecomActivity : AppCompatActivity() {
             }
             Log.d("myTag", "결과 값 : " + res)
 
+
             var answer = res.menuList
 
             if (answer.isNullOrEmpty()) {
-                init()
+//                init(false)
+
             } else {
 
+                binding.progressBar.visibility = View.VISIBLE
                 answer.forEach {
                     textlayout[j].setText(it.foodName)
 
