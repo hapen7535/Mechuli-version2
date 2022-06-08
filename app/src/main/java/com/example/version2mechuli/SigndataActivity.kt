@@ -51,10 +51,10 @@ class SigndataActivity : AppCompatActivity() {
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
         var i = 0
-        arrMenu.forEach {
+        textList.forEach {
             ratingBars[i].setOnRatingBarChangeListener{ ratingBar, rating, fromUser->
                 ratingBar.rating
-                ratingList[it] = rating
+                ratingList[it.text.toString()] = rating
                 Log.d("ratingList", ratingList.toString())
             }
             i += 1
