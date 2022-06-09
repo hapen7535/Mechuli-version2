@@ -46,14 +46,14 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_alignParentBottom="true"
+            android:id="@+id/addAssess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/addAssess"
-            android:text="추가하기"
+            android:layout_alignParentBottom="true"
             android:background="#59FFCC3A"
             android:fontFamily="@font/notosanskrbold"
-            android:textSize="18sp"/>
+            android:text="추가하기"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 

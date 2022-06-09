@@ -58,11 +58,14 @@
             android:id="@+id/noLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@drawable/button_round"
             android:fontFamily="@font/notosanskrbold"
             android:padding="10dp"
             android:text="로그인없이 시작하기"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:textSize="20sp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
@@ -71,15 +74,20 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosanskrmedium"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
             android:text="랜덤으로 메뉴를 추천받을 수 있어요" />
 
         <Button
             android:id="@+id/withLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#59FFCC3A"
+            android:background="@drawable/button_round_theme"
             android:fontFamily="@font/notosanskrbold"
-            android:padding="10dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
             android:text="로그인하고 시작하기"
             android:textSize="20sp" />
 
