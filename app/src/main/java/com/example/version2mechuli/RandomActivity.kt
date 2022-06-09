@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.version2mechuli.databinding.ActivityRandomBinding
@@ -81,6 +82,7 @@ class RandomActivity : AppCompatActivity() {
 
 
             Log.d("myTag", "결과 값 : " + res)
+            Toast.makeText(this@RandomActivity, "평점 가져오기 완료, 상단 탭을 클릭해주세요.", Toast.LENGTH_LONG).show()
 
             var answer = res.menuList
 
@@ -175,7 +177,7 @@ class RandomActivity : AppCompatActivity() {
 
                             ele.forEach {
 
-                                if (it.equals("이가")) {
+                                if (it.equals("이외")) {
                                     menuList[i].visibility = View.VISIBLE
                                 } else {
                                     menuList[i].visibility = View.GONE
