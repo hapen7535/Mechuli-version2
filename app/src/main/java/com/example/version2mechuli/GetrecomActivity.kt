@@ -56,13 +56,12 @@ class GetrecomActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        if(binding.menu1.isVisible){
-            showProgress(false)
-        }
-        else{
+//        if(binding.menu1.isVisible){
+//            showProgress(false)
+//        }
+//        else{
 //            showProgress(true)
-            showProgress(false)
-        }
+//        }
 
     }
 
@@ -205,6 +204,18 @@ class GetrecomActivity : AppCompatActivity() {
                 }
 //            }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if(binding.menu1.isVisible){
+            showProgress(false)
+        }
+        else{
+            showProgress(true)
+        }
+
     }
 
 }
