@@ -59,7 +59,8 @@ class GetrecomActivity : AppCompatActivity() {
             showProgress(false)
         }
         else{
-            showProgress(true)
+//            showProgress(true)
+            showProgress(false)
         }
 
     }
@@ -90,12 +91,11 @@ class GetrecomActivity : AppCompatActivity() {
 
             var answer = res.menuList
 
-            if (answer.isNullOrEmpty()) {
-//                init(false)
+//            if (answer.isNullOrEmpty()) {
+////                init(false)
+//
+//            } else {
 
-            } else {
-
-                binding.progressBar.visibility = View.VISIBLE
                 answer.forEach {
                     textlayout[j].setText(it.foodName)
 
@@ -201,7 +201,7 @@ class GetrecomActivity : AppCompatActivity() {
                     }
 
                 }
-            }
+//            }
         }
     }
 
