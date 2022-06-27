@@ -1,18 +1,19 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.api
 
 import com.example.version2mechuli.Constants.Companion.BASE_URL
+import com.example.version2mechuli.SendUserIdGetMenuList
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object InfoClientData {
+object InfoClientRecommend {
 
     private val okHttpClient by lazy {
         OkHttpClient.Builder()
             .connectTimeout(1, TimeUnit.MINUTES)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(1, TimeUnit.MINUTES)
+            .writeTimeout(1, TimeUnit.MINUTES)
             .build()
     }
 
@@ -24,8 +25,8 @@ object InfoClientData {
             .build()
     }
 
-    val service : SendUserdata by lazy {
-        retrofit.create(SendUserdata::class.java)
+    val service : SendUserIdGetMenuList by lazy {
+        retrofit.create(SendUserIdGetMenuList::class.java)
     }
 
 }

@@ -1,7 +1,6 @@
 package com.example.version2mechuli
 
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
@@ -10,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.api.InfoClientMenu
+import com.example.version2mechuli.api.InfoClientRating
 import com.example.version2mechuli.databinding.ActivityAddassessBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.api.InfoClientRecommend
 import com.example.version2mechuli.databinding.ActivityGetrecomBinding
-import com.example.version2mechuli.databinding.ActivityLoginBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -52,22 +52,10 @@ class GetrecomActivity : AppCompatActivity() {
 //        binding.progressBar.visibility = View.VISIBLE
 
 
-        binding.returnbtn.setOnClickListener{
+        binding.returnbtn.setOnClickListener {
             onBackPressed()
         }
-
-//        if(binding.menu1.isVisible){
-//            showProgress(false)
-//        }
-//        else{
-//            showProgress(true)
-//        }
-
     }
-
-//    private fun init(visible : Boolean){
-//        showProgress(visible)
-//    }
 
     fun showProgress(isShow : Boolean){
         if(isShow) {binding.progressBar.visibility = View.VISIBLE}
@@ -91,11 +79,6 @@ class GetrecomActivity : AppCompatActivity() {
 
 
             var answer = res.menuList
-
-//            if (answer.isNullOrEmpty()) {
-////                init(false)
-//
-//            } else {
 
                 answer.forEach {
                     textlayout[j].setText(it.foodName)

@@ -1,9 +1,11 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.api
 
+import com.example.version2mechuli.Constants
+import com.example.version2mechuli.SendLoginData
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object InfoClientMenu {
+object InfoClientLogin {
 
     private val retrofit by lazy{
         Retrofit.Builder()
@@ -12,8 +14,8 @@ object InfoClientMenu {
             .build()
     }
 
-    val service : MenuApi by lazy {
-        retrofit.create(MenuApi::class.java)
+    val service : SendLoginData by lazy {
+        retrofit.create(SendLoginData::class.java)
     }
 
 }

@@ -8,10 +8,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.version2mechuli.api.InfoClient
 import com.example.version2mechuli.databinding.ActivitySignupBinding
 import kotlinx.coroutines.*
-import retrofit2.Call
-import kotlin.math.sign
 
 class SignupActivity : AppCompatActivity() {
 

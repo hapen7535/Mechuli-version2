@@ -2,23 +2,21 @@ package com.example.version2mechuli
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.util.Log
 import android.widget.ImageView
-import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.api.InfoClientData
+import com.example.version2mechuli.api.InfoClientMenuImg
 //import com.bumptech.glide.Glide
 import com.example.version2mechuli.databinding.ActivitySigndataBinding
-import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
 class SigndataActivity : AppCompatActivity() {
 
