@@ -1,4 +1,4 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.R
 import com.example.version2mechuli.api.InfoClientRecommend
 import com.example.version2mechuli.databinding.ActivityGetrecomBinding
 import kotlinx.coroutines.Dispatchers

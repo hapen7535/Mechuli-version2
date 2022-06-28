@@ -1,4 +1,4 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.R
 import com.example.version2mechuli.api.InfoClientRandom
 import com.example.version2mechuli.databinding.ActivityRandomBinding
 import kotlinx.coroutines.*
@@ -96,7 +97,7 @@ class RandomActivity : AppCompatActivity() {
 
                 ele.add(it.type_1)
 
-                Log.d("ele", "${ele}")
+//                Log.d("ele", "${ele}")
                 j += 1
             }
 

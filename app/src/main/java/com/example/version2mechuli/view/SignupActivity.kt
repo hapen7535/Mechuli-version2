@@ -1,4 +1,4 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.version2mechuli.R
+import com.example.version2mechuli.SignInfo
 import com.example.version2mechuli.api.InfoClient
 import com.example.version2mechuli.databinding.ActivitySignupBinding
 import kotlinx.coroutines.*
@@ -44,7 +46,6 @@ class SignupActivity : AppCompatActivity() {
             var id = userId.toString()
             var pw = userPw.toString()
             var dpw = duplicatePw.toString()
-            //Log.d("myTag", "id : " + id + ", pw : " + pw + ", dpw : " + dpw)
 
             if(!pw.equals(dpw)){
                 Toast.makeText(applicationContext, "두 비밀번호가 같지 않습니다.", Toast.LENGTH_LONG).show()
@@ -107,10 +108,6 @@ class SignupActivity : AppCompatActivity() {
 
     private fun ActivityStart(userid : String, userpw : String, gender : String, age : String){
         val intent = Intent(this, SigndataActivity::class.java)
-//        intent.putExtra("id", userid)
-//        intent.putExtra("pw",userpw)
-//        intent.putExtra("gender",gender)
-//        intent.putExtra("age", age)
         intent.putExtra("info", SignInfo(userid, userpw, gender, age))
         startActivity(intent)
     }

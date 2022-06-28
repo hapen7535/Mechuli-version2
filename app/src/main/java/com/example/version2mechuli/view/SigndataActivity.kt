@@ -1,4 +1,4 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.R
+import com.example.version2mechuli.SignInfo
 import com.example.version2mechuli.api.InfoClientData
 import com.example.version2mechuli.api.InfoClientMenuImg
 //import com.bumptech.glide.Glide
@@ -43,9 +45,7 @@ class SigndataActivity : AppCompatActivity() {
         userpw = signInfo.pw
         gender = signInfo.gender
         age = signInfo.age
-//        Log.d("info", "${userid},${userpw},${gender},${age}")
-//        userid = secondIntent.getStringExtra("id").toString()
-//        userpw = secondIntent.getStringExtra("pw").toString()
+
         arrMenu = arrayListOf("떡볶이","파스타","쌈밥","라멘","와플")
 
         var i = 0
@@ -60,16 +60,12 @@ class SigndataActivity : AppCompatActivity() {
 
         getMenuImg(arrMenu, imgList, textList)
 
-//        binding = ActivitySigndataBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-
         binding.returnbtn.setOnClickListener{
             onBackPressed()
         }
 
         binding.signTest.setOnClickListener {
 
-//            getRatings(textList, ratingBars)
 
             Log.d("rating Size", "${ratingList.size}")
             if(ratingList.size < 5){

@@ -7,14 +7,14 @@
     <data>
         <variable
             name="MenuAssessData"
-            type="com.example.version2mechuli.SigndataActivity" />
+            type="com.example.version2mechuli.view.SigndataActivity" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".SigndataActivity">
+        tools:context=".view.SigndataActivity">
 
         <GridLayout
             android:id="@+id/mainBar"

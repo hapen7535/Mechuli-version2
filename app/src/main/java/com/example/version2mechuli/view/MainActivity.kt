@@ -1,9 +1,10 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.version2mechuli.R
 
 class MainActivity : AppCompatActivity() {
 

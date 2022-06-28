@@ -1,4 +1,4 @@
-package com.example.version2mechuli
+package com.example.version2mechuli.view
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.example.version2mechuli.Description
+import com.example.version2mechuli.R
 import com.example.version2mechuli.api.InfoClientMenu
 import com.example.version2mechuli.api.InfoClientRating
 import com.example.version2mechuli.databinding.ActivityAddassessBinding

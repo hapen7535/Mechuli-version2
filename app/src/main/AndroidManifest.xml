@@ -11,31 +11,31 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Version2Mechuli">
         <activity
-            android:name=".AddassessActivity"
+            android:name=".view.AddassessActivity"
             android:exported="false" />
         <activity
-            android:name=".GetrecomActivity"
+            android:name=".view.GetrecomActivity"
             android:exported="false" />
         <activity
-            android:name=".CustomerActivity"
+            android:name=".view.CustomerActivity"
             android:exported="false" />
         <activity
-            android:name=".SigndataActivity"
+            android:name=".view.SigndataActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".view.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".RandomActivity"
+            android:name=".view.RandomActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".view.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
