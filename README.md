@@ -1,24 +1,42 @@
-# 메추리 Mechuli version2.0.0  
-  
-## Introduction  
-Food Recommendation Android Application Using Matrix Factorization SGD  
-행렬 분해 SGD 알고리즘을 활용한 음식 추천 어플리케이션입니다.
-  
-## Getting Started  
-To build this project, use 'Import Project' in Android Studio.  
-And Run android emulator.  
-I would recommend you to use Pixel 2 for android emulator.  
-  
-해당 프로젝트를 빌드하기 위해서는, 안드로이드 스튜디오에서 Import Project를 해주세요.  
-안드로이드 에뮬레이터를 사용할 때는, Pixel 2 에뮬레이터를 사용하시는 것을 추천드립니다.  
+# 메추리
+다양한 음식 중 기호에 맞는 음식을 추천해주는 안드로이드 앱 프로젝트입니다.  
+몇 가지 음식에 대해 평점을 매긴다면, 바로 기호에 맞는 식사 메뉴를 추천받을 수 있습니다.  
 
-  <img width="90%" src="https://user-images.githubusercontent.com/79076150/167440488-9b59de24-89bc-450e-b975-6e5c8817e5ab.png"/>  
+### 프로젝트 요약
+- 매긴 평점을 바탕으로 음식을 추천받을 수 있습니다.
+- 로그인 후에는 평점을 수정할 수 있으며, 다른 제품에 대한 평점을 추가할 수도 있습니다.
 
-***
+### 본인 기여 내용
+- 추천 기능 안드로이드 부분 개발
+- UI/UX 디자인
+
+### 사용 기술
+- Languages : Kotlin
+- Networking : Retrofit2
+- Asynchronus Task : Coroutine
+- Image Loading : Glide
+
+### 시연 영상
+- 비회원 추천받기 시연 영상 & 회원가입 시연 영상
+<center><img src="https://user-images.githubusercontent.com/79076150/216329177-11ec11a9-3f96-4a90-9bd0-ddc7e271ff16.gif" width="300" height="612"></center>
+비회원의 경우 랜덤으로 음식을 추천 받을 수 있습니다.  
+
+회원가입 시에는 편의점 음식 제품에 대한 평점이 5개 필요합니다.
+
+해당 평점은 추천 알고리즘에 사용될 초기 데이터가 됩니다.
+　
+　
+- 평점 수정 & 추천 받기 시연 영상
+<center><img src="https://user-images.githubusercontent.com/79076150/216330058-071c59c3-775b-404e-bbee-4acd20f418a3.gif" width="300" height="612"></center>
+평점 데이터를 수정할 수 있습니다.  
+
+음식 이름을 검색하고 별점을 수정해주시면, 평점 데이터가 수정됩니다.
+
+추천 받기를 클릭하면 지금까지의 평점 데이터를 통해 추천을 받을 수 있습니다.  
+
   
-## Libraries Used  
-|              |            |
-|--------------|------------|
-| Network      | OkHttp3,Retrofit2  |
-| Asynchronous | Coroutine  |
-| JetPack      | Lifecycles, DataBinding |
+  
+
+
+  
+  
