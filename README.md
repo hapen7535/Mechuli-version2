@@ -35,7 +35,9 @@
 추천 받기를 클릭하면 지금까지의 평점 데이터를 통해 추천을 받을 수 있습니다.  
 
   
-  
+### 프로젝트 아키텍처
+<center><img src="https://user-images.githubusercontent.com/79076150/216331245-388c659e-85d2-4288-87d3-cd1a9c67d636.png" width="800" height="450"></center>
+아키텍처 패턴을 적용하지 않았고, Activity에서 데이터를 불러오고 View를 관리하는 등 여러 로직을 다 작성했습니다.
 
 
   
